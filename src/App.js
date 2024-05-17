@@ -4,15 +4,9 @@ import {
     createBrowserRouter,
     createRoutesFromElements,
 } from "react-router-dom";
+import "./reset.css";
 import "./App.css";
-import {
-    Contact,
-    Home,
-    About,
-    NotFound,
-    Projects,
-    Resume,
-} from "./pages/index";
+import { Contact, Home, About, NotFound, Projects } from "./pages/index";
 import Root from "./layouts/Root";
 import { ROUTES } from "./routes/routes";
 
@@ -23,7 +17,6 @@ const router = createBrowserRouter(
             <Route path={ROUTES.contact.path} element={<Contact />} />
             <Route path={ROUTES.about.path} element={<About />} />
             <Route path={ROUTES.project.path} element={<Projects />} />
-            <Route path={ROUTES.resume.path} element={<Resume />} />
         </Route>
     )
 );

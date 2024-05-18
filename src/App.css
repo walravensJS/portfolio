@@ -1,7 +1,14 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Inter", sans-serif;
-
     margin: 0;
+}
+
+h1 {
+    font-size: 3rem;
 }
 
 nav {
@@ -50,6 +57,117 @@ nav li a:hover {
     display: flex;
     align-items: center;
 }
+
 h1 {
     line-height: 1;
+}
+
+.occupation-container {
+    height: 2rem;
+    overflow: hidden;
+}
+
+.occupation {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    animation: slide 9s infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-2rem);
+    }
+    50% {
+        transform: translateY(-2rem);
+    }
+    60% {
+        transform: translateY(-4rem);
+    }
+    80% {
+        transform: translateY(-4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.occupation-item {
+    font-size: 1.25rem;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.name {
+    font-size: 4rem;
+}
+
+.home-header {
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    height: 70vh;
+}
+
+.description {
+    color: #686868;
+    margin-top: 2rem;
+}
+
+.circle-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-button {
+    width: 5rem;
+    height: 5rem;
+    margin: auto;
+    border-radius: 50%;
+    background-color: rgb(244, 244, 244);
+    cursor: pointer;
+    border: none;
+    transition: 0.2s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.circle-button:hover {
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.circle-button:visited {
+    color: black;
+}
+
+.about-home {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    text-align: center;
+    margin: 5rem 0rem;
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.about-home p:nth-child(2) {
+    width: 70%;
+    margin: auto;
+}
+
+.skills {
+    text-align: center;
 }

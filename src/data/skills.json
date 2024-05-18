@@ -1,0 +1,32 @@
+{
+    "skills": [
+        {
+            "name": "HTML",
+            "image": "html_image_link.jpg"
+        },
+        {
+            "name": "CSS",
+            "image": "css_image_link.jpg"
+        },
+        {
+            "name": "JavaScript",
+            "image": "javascript_image_link.jpg"
+        },
+        {
+            "name": "Adobe Photoshop",
+            "image": "photoshop_image_link.jpg"
+        },
+        {
+            "name": "Adobe Illustrator",
+            "image": "illustrator_image_link.jpg"
+        },
+        {
+            "name": "Adobe InDesign",
+            "image": "indesign_image_link.jpg"
+        },
+        {
+            "name": "Figma",
+            "image": "figma_image_link.jpg"
+        }
+    ]
+}

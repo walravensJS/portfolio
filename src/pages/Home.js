@@ -41,7 +41,7 @@ export default function Home() {
             </div>
             <Circlebutton></Circlebutton>
             <div class="about-home" id="about">
-                <p>Hello there!</p>
+                <p class="wave">Hello there! 👋</p>
                 <p>
                     I'm a full stack developer and graphic designer with a knack
                     for weaving digital magic. By day, I'm deep into the world

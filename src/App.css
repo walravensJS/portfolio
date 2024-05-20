@@ -170,6 +170,11 @@ h1 {
     color: black;
 }
 
+.main-container {
+    width: 80%;
+    margin: auto;
+}
+
 .about-home {
     background-color: #f5f5f5;
     padding: 2rem;
@@ -272,5 +277,93 @@ footer {
 }
 
 .social-link:hover {
+    color: black;
+}
+
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.project-card {
+    width: 32%;
+    border-radius: 1rem;
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    color: #000000;
+    text-decoration: none;
+    transition: 0.2s ease-in;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.card-context {
+    padding: 1rem;
+}
+
+.proj-header {
+    height: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.proj-header img {
+    height: 20rem;
+}
+
+.skills-used {
+    color: #929292;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.cat-item {
+    background-color: rgba(241, 241, 241, 0.424);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.filter-container {
+    overflow-y: scroll;
+    max-height: 200px; /* Adjust the height as needed */
+}
+.filter-button {
+    text-align: center;
+    border-radius: 1rem;
+    border: 1px solid black;
+    background-color: white;
+    padding: 1rem;
+    margin-right: 1rem;
+    transition: 0.1s ease-in;
+}
+
+.filter-button:hover {
+    background-color: #000000;
+    cursor: pointer;
+    color: white;
+}
+
+.card-description {
+    color: #686868;
+}
+
+.project-card:hover {
+    background-color: #e6e6e6ac;
+}
+
+.project-card:hover .cat-item {
+    color: rgb(91, 91, 91);
+}
+
+.project-card:hover .card-description {
     color: black;
 }

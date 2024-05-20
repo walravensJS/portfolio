@@ -11,13 +11,13 @@ export default function Navigation() {
                     <NavLink to={ROUTES.home.path}>Home</NavLink>
                 </li>
                 <li class="nav-item">
-                    <NavLink to={ROUTES.contact.path}>Contact</NavLink>
+                    <NavLink to={ROUTES.project.path}>Projects</NavLink>
                 </li>
                 <li class="nav-item">
                     <NavLink to={ROUTES.about.path}>About</NavLink>
                 </li>
                 <li class="nav-item">
-                    <NavLink to={ROUTES.project.path}>Projects</NavLink>
+                    <NavLink to={ROUTES.contact.path}>Contact</NavLink>
                 </li>
             </ul>
         </nav>

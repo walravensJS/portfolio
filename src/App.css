@@ -51,6 +51,22 @@ nav li a:hover {
     -webkit-box-shadow: 0px 0px 1rem 0px rgba(255, 0, 0, 1);
     -moz-box-shadow: 0px 0px 1rem 0px rgba(255, 0, 0, 1);
     box-shadow: 0px 0px 1rem 0px rgba(255, 0, 0, 1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0px 0px 1rem 0px rgba(255, 0, 0, 1);
+    }
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0px 0px 1.5rem 0px rgba(255, 0, 0, 0.75);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0px 0px 1rem 0px rgba(255, 0, 0, 1);
+    }
 }
 
 .looking {
@@ -170,4 +186,85 @@ h1 {
 
 .skills {
     text-align: center;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+    margin: 2rem auto;
+}
+
+.skill-item {
+    display: flex;
+    width: 49%;
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    border-radius: 2rem;
+    align-items: center;
+    background-color: rgba(236, 236, 236, 0.244);
+    margin-bottom: 0.5rem;
+    transition: 0.2s ease-in;
+}
+
+.skill-item img {
+    height: 3rem;
+}
+
+.skill-item h3 {
+    margin-left: 1rem;
+}
+
+.skill-item:hover {
+    filter: invert(1);
+}
+
+footer {
+    background-color: rgba(236, 236, 236, 0.244);
+    padding: 1rem;
+    margin-top: 5rem;
+}
+
+.foot-item {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+    list-style-type: none;
+}
+
+.foot-item:visited {
+    color: rgb(37, 37, 37);
+}
+
+.foot-item:hover {
+    color: black;
+}
+
+.footer-links {
+    display: flex;
+    margin: 2rem 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.footer-social {
+    margin-top: 1rem;
+}
+
+.social-link {
+    color: #686868;
+    text-decoration: none;
+    transition: 0.2s ease-in;
+}
+
+.social-link:hover {
+    color: black;
 }

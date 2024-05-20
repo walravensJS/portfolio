@@ -2,31 +2,35 @@
     "skills": [
         {
             "name": "HTML",
-            "image": "html_image_link.jpg"
+            "image": "img/html.png"
         },
         {
             "name": "CSS",
-            "image": "css_image_link.jpg"
+            "image": "img/css.png"
         },
         {
             "name": "JavaScript",
-            "image": "javascript_image_link.jpg"
+            "image": "img/javascript.png"
         },
         {
             "name": "Adobe Photoshop",
-            "image": "photoshop_image_link.jpg"
+            "image": "img/photoshop.png"
         },
         {
             "name": "Adobe Illustrator",
-            "image": "illustrator_image_link.jpg"
+            "image": "img/illustrator.png"
         },
         {
             "name": "Adobe InDesign",
-            "image": "indesign_image_link.jpg"
+            "image": "img/indesign.png"
         },
         {
             "name": "Figma",
-            "image": "figma_image_link.jpg"
+            "image": "img/figma.png"
+        },
+        {
+            "name": "React",
+            "image": "img/react.png"
         }
     ]
 }

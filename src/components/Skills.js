@@ -6,11 +6,11 @@ export default function Skills() {
 
     return (
         <div>
-            <ul>
+            <ul class="skill-list">
                 {skills.map((skill, index) => (
-                    <li key={index}>
-                        <h3>{skill.name}</h3>
+                    <li key={index} class="skill-item">
                         <img src={skill.image} alt={skill.name} />
+                        <h3>{skill.name}</h3>
                     </li>
                 ))}
             </ul>

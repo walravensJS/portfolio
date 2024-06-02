@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Socialcontact from "../components/Socialcontact";
 
 export default function Contact() {
     const formRef = useRef(null);
@@ -46,6 +47,7 @@ export default function Contact() {
                             name="textarea"
                         ></textarea>
                     </div>
+                    <Socialcontact />
                     <button type="submit" className="form-submit-btn">
                         Submit
                     </button>

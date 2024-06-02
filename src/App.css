@@ -619,9 +619,21 @@ footer {
     transform: translateX(0.8em);
 }
 
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icons svg {
+    fill: #686868;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 /* dark mode */
 
 body.dark {
-    background-color: #121212;
+    background-color: #131313;
     color: #fff;
 }

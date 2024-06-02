@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../routes/routes";
-
+import ThemeSwitcher from "./Themeswitcher";
+import { ThemeArea } from "../context/ThemeContext";
 export default function Navigation() {
     return (
         <nav>
@@ -19,6 +20,9 @@ export default function Navigation() {
                 <li class="nav-item">
                     <NavLink to={ROUTES.contact.path}>Contact</NavLink>
                 </li>
+                <ThemeArea>
+                    <ThemeSwitcher />
+                </ThemeArea>
             </ul>
         </nav>
     );

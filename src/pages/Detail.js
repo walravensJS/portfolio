@@ -3,6 +3,9 @@ import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { gsap } from "gsap";
 import { GET_PROJECT } from "../graphql/detail";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../routes/routes";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function Detail() {
     const { slug } = useParams();
@@ -37,12 +40,12 @@ export default function Detail() {
     }
 
     return (
-        <div ref={contentRef}>
+        <div ref={contentRef} className="main-container">
+            <Link to={ROUTES.project.path} className="return">
+                <FaArrowLeft /> Go back
+            </Link>
             {data.projects.map((project) => (
-                <div
-                    className="portfolio-header main-container"
-                    key={project.id}
-                >
+                <div className="portfolio-header" key={project.id}>
                     <div>
                         <h1>{project.title}</h1>
                         <br />

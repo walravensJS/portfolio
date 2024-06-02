@@ -41,7 +41,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div>
+        <div className="main-container">
             <div className="home-header" ref={headerRef}>
                 <div className="header-intro">
                     <div className="looking">

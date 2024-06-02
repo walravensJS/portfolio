@@ -28,7 +28,14 @@ export default function About() {
 
     return (
         <div className="main-container">
-            <div className="about-header">
+            <div className="about-pic-mobile">
+                <div className="pic" ref={headerPicsRef}>
+                    <img
+                        src="img/memoji.png"
+                        alt="MeMoji"
+                        className="overlap-img"
+                    />
+                </div>
                 <div className="about-text" ref={aboutTextRef}>
                     <h1>About me</h1>
                     <p>
@@ -47,10 +54,10 @@ export default function About() {
                         <div className="my-information">
                             <div className="info-left">
                                 <p>Age:</p>
-                                <p>Nationality</p>
-                                <p>LinkedIn</p>
-                                <p>GitHub</p>
-                                <p>Instagram</p>
+                                <p>Nationality:</p>
+                                <p>LinkedIn:</p>
+                                <p>GitHub:</p>
+                                <p>Instagram:</p>
                             </div>
                             <div className="info-right">
                                 <p>22</p>
@@ -70,7 +77,7 @@ export default function About() {
                         </div>
                     </p>
                 </div>
-                <div className="header-pics" ref={headerPicsRef}>
+                <div className="header-pics about-mob" ref={headerPicsRef}>
                     <img
                         src="img/memoji.png"
                         alt="MeMoji"

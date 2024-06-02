@@ -17,9 +17,15 @@ export default function ThemeSwitcher() {
     };
 
     return (
-        <label className="switch">
-            <input type="checkbox" checked={isDark} onChange={handleClick} />
-            <span className="slider"></span>
-        </label>
+        <div className="toggle-button">
+            <label className="switch">
+                <input
+                    type="checkbox"
+                    checked={isDark}
+                    onChange={handleClick}
+                />
+                <span className="slider"></span>
+            </label>
+        </div>
     );
 }

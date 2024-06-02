@@ -1,11 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_PROJECTS } from "../graphql/queries";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../routes/routes";
+import gsap from "gsap"; // Import GSAP
 
 function DisplayProjects({ selectedFilter }) {
     const { loading, error, data } = useQuery(GET_PROJECTS);
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        if (data) {
+            setTimeout(() => setLoaded(true), 100);
+        }
+    }, [data]);
+
+    useEffect(() => {
+        // Floating animation on hover
+        const cards = document.querySelectorAll(".project-card");
+
+        cards.forEach((card) => {
+            card.addEventListener("mouseenter", () => {
+                gsap.to(card, {
+                    y: -20,
+                    duration: 0.3,
+                    ease: "power1.inOut",
+                });
+            });
+
+            card.addEventListener("mouseleave", () => {
+                gsap.to(card, {
+                    y: 0,
+                    duration: 0.3,
+                    ease: "power1.inOut",
+                });
+            });
+        });
+    }, []); // Only run once when component mounts
+
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error : {error.message}</p>;
 
@@ -23,7 +55,7 @@ function DisplayProjects({ selectedFilter }) {
         <Link
             to={`${ROUTES.project.path}/${project.slug}`}
             key={`project-${project.slug}`}
-            className="project-card"
+            className={`project-card ${loaded ? "fade-up" : ""}`}
         >
             <img alt={project.slug} src={project.fullImage.url} />
             <div className="card-context">
@@ -63,6 +95,16 @@ export default function Projects() {
         "Premiere Pro",
         "Figma",
     ];
+
+    useEffect(() => {
+        // Fade in animation
+        gsap.from(".main-container", {
+            opacity: 0,
+            y: 100,
+            duration: 1,
+            ease: "power4.out",
+        });
+    }, []); // Only run once when component mounts
 
     return (
         <div>

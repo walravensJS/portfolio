@@ -1,12 +1,49 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Circlebutton from "../components/Circlebutton";
 import Skills from "../components/Skills";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Home() {
+    const headerRef = useRef(null);
+    const aboutRef = useRef(null);
+    const skillsRef = useRef(null);
+
+    useEffect(() => {
+        // Fade in header and skills on initial load
+        gsap.from(headerRef.current, { opacity: 0, y: 50, duration: 1 });
+        gsap.from(skillsRef.current, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            delay: 0.5,
+        });
+
+        // Fade in about section on scroll
+        gsap.fromTo(
+            aboutRef.current,
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: aboutRef.current,
+                    start: "top 80%",
+                    end: "top 60%",
+                    scrub: true,
+                    toggleActions: "play none none none",
+                },
+            }
+        );
+    }, []);
+
     return (
         <div>
-            <div className="home-header">
-                <div class="header-intro">
+            <div className="home-header" ref={headerRef}>
+                <div className="header-intro">
                     <div className="looking">
                         <div className="red-circle"></div>
                         <p>Looking for work</p>
@@ -25,23 +62,22 @@ export default function Home() {
                             </li>
                         </ul>
                     </div>
-
-                    <p class="description">
+                    <p className="description">
                         22 year old, Belgian/Native American fullstack
                         developer.
                     </p>
                 </div>
-                <div class="header-pics">
+                <div className="header-pics">
                     <img
                         src="img/memoji.png"
                         alt="MeMoji"
-                        class="overlap-img"
+                        className="overlap-img"
                     />
                 </div>
             </div>
-            <Circlebutton></Circlebutton>
-            <div class="about-home" id="about">
-                <p class="wave">Hello there! 👋</p>
+            <Circlebutton />
+            <div className="about-home" id="about" ref={aboutRef}>
+                <p className="wave">Hello there! 👋</p>
                 <p>
                     I'm a full stack developer and graphic designer with a knack
                     for weaving digital magic. By day, I'm deep into the world
@@ -55,11 +91,10 @@ export default function Home() {
                     Let's team up and make some digital dreams a reality!
                 </p>
             </div>
-
-            <div class="skills">
+            <div className="skills" ref={skillsRef}>
                 <h1>Skills</h1>
-                <p>Software skills i’ve developed over the years</p>
-                <Skills></Skills>
+                <p>Software skills I’ve developed over the years</p>
+                <Skills />
             </div>
         </div>
     );

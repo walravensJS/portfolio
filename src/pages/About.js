@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Education from "../components/Education";
 import Skills from "../components/Skills";
+import { gsap } from "gsap";
 
 export default function About() {
+    const aboutTextRef = useRef(null);
+    const headerPicsRef = useRef(null);
+
+    useEffect(() => {
+        const aboutText = aboutTextRef.current;
+        const headerPics = headerPicsRef.current;
+
+        // GSAP animation for the about text
+        gsap.from(aboutText, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+        });
+
+        // GSAP animation for the header pics
+        gsap.from(headerPics, {
+            opacity: 0,
+            x: -50,
+            duration: 1,
+        });
+    }, []);
+
     return (
         <div className="main-container">
             <div className="about-header">
-                <div className="about-text">
+                <div className="about-text" ref={aboutTextRef}>
                     <h1>About me</h1>
                     <p>
                         I'm a Belgian / Native American full stack developer and
@@ -47,7 +70,7 @@ export default function About() {
                         </div>
                     </p>
                 </div>
-                <div className="header-pics">
+                <div className="header-pics" ref={headerPicsRef}>
                     <img
                         src="img/memoji.png"
                         alt="MeMoji"

@@ -11,14 +11,14 @@ export default function Contact() {
             opacity: 0,
             y: 50,
             duration: 1,
-            delay: 0.4, // Delay the animation slightly to allow the box to load first
+            delay: 0.4,
         });
 
         gsap.from(form.children, {
             opacity: 0,
             y: 20,
             duration: 1,
-            stagger: 0.9, // Stagger the animation of each form element
+            stagger: 0.9,
         });
     }, []);
 

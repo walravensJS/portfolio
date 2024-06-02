@@ -23,7 +23,7 @@ export default function Navigation() {
                 <div class="footer-text">
                     <div class="footer-contact">
                         <h4>Stijn Walravens</h4>
-                        <p>email@Johndoe.com</p>
+                        <p>stijn.w01@hotmail.com</p>
                     </div>
                     <div class="footer-social">
                         <a
@@ -33,10 +33,18 @@ export default function Navigation() {
                         >
                             <p>LinkedIn</p>
                         </a>
-                        <a href="github" target="blank" class="social-link">
+                        <a
+                            href="https://github.com/pgm-stijwalr"
+                            target="blank"
+                            class="social-link"
+                        >
                             <p>Github</p>
                         </a>
-                        <a href="Instagram" target="blank" class="social-link">
+                        <a
+                            href="https://discord.com/channels/823722533110284298/823722533110284302/1246839028771196979"
+                            target="blank"
+                            class="social-link"
+                        >
                             <p>Instagram</p>
                         </a>
                     </div>

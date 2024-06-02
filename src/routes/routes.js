@@ -12,11 +12,11 @@ export const ROUTES = {
         title: "Contact",
     },
     project: {
-        path: "/project",
+        path: "/projects",
         title: "Projects",
     },
-    resume: {
-        path: "/resume",
-        title: "Resume",
+    detail: {
+        path: "/projects/:slug",
+        title: "Detail",
     },
 };

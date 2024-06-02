@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_PROJECTS } from "../graphql/queries";
 import { Link } from "react-router-dom";
+import { ROUTES } from "../routes/routes";
 
 function DisplayProjects({ selectedFilter }) {
     const { loading, error, data } = useQuery(GET_PROJECTS);
-
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error : {error.message}</p>;
 
@@ -20,7 +20,11 @@ function DisplayProjects({ selectedFilter }) {
         : data.projects;
 
     return filteredProjects.map((project) => (
-        <Link to={`${project.slug}`} key={project.id} className="project-card">
+        <Link
+            to={`${ROUTES.project.path}/${project.slug}`}
+            key={`project-${project.slug}`}
+            className="project-card"
+        >
             <img alt={project.slug} src={project.fullImage.url} />
             <div className="card-context">
                 <h3>{project.title}</h3>

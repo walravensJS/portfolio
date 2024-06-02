@@ -32,6 +32,8 @@ export default function Skills() {
 
     return (
         <div>
+            <h1>Skills</h1>
+            <p>Software skills I’ve developed over the years</p>
             <ul className="skill-list">
                 {skills.map((skill, index) => (
                     <li

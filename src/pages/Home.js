@@ -92,8 +92,6 @@ export default function Home() {
                 </p>
             </div>
             <div className="skills" ref={skillsRef}>
-                <h1>Skills</h1>
-                <p>Software skills I’ve developed over the years</p>
                 <Skills />
             </div>
         </div>

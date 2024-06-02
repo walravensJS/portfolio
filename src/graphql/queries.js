@@ -21,3 +21,14 @@ export const GET_PROJECTS = gql`
         }
     }
 `;
+
+export const GET_EDUCATION = gql`
+    query Educations {
+        educations {
+            id
+            title
+            course
+            period
+        }
+    }
+`;

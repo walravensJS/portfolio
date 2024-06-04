@@ -568,6 +568,23 @@ footer a {
     color: #3b3b3b;
 }
 
+.links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.links svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: rgb(37, 37, 37);
+}
+
+.links a {
+    text-decoration: none;
+}
+
 /* theme switch*/
 
 .toggle-button {

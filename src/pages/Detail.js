@@ -6,6 +6,8 @@ import { GET_PROJECT } from "../graphql/detail";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../routes/routes";
 import { FaArrowLeft } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { GoLinkExternal } from "react-icons/go";
 
 export default function Detail() {
     const { slug } = useParams();
@@ -48,6 +50,18 @@ export default function Detail() {
                 <div className="portfolio-header" key={project.id}>
                     <div>
                         <h1>{project.title}</h1>
+                        <div className="links">
+                            <p>
+                                <a href={project.githubUrl} target="_blank">
+                                    <FaGithub />
+                                </a>
+                            </p>
+                            <p>
+                                <a href={project.site} target="_blank">
+                                    <GoLinkExternal />
+                                </a>
+                            </p>
+                        </div>
                         <br />
                         <p>{project.description}</p>
                     </div>

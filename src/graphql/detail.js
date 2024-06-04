@@ -6,6 +6,8 @@ export const GET_PROJECT = gql`
             description
             id
             title
+            githubUrl
+            site
             slug
             fullImage {
                 url
@@ -17,6 +19,7 @@ export const GET_PROJECT = gql`
             illustrator
             javascript
             photoshop
+            gsap
         }
     }
 `;

@@ -3,7 +3,8 @@ import { useQuery } from "@apollo/client";
 import { GET_PROJECTS } from "../graphql/queries";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../routes/routes";
-import gsap from "gsap"; // Import GSAP
+
+import gsap from "gsap";
 
 function DisplayProjects({ selectedFilter }) {
     const { loading, error, data } = useQuery(GET_PROJECTS);
@@ -16,7 +17,6 @@ function DisplayProjects({ selectedFilter }) {
     }, [data]);
 
     useEffect(() => {
-        // Floating animation on hover
         const cards = document.querySelectorAll(".project-card");
 
         cards.forEach((card) => {
@@ -36,7 +36,12 @@ function DisplayProjects({ selectedFilter }) {
                 });
             });
         });
-    }, []); // Only run once when component mounts
+    }, []);
+
+    console.log(data && data.projects);
+    console.log(selectedFilter);
+    console.log(loaded);
+    console.log(error);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error : {error.message}</p>;
@@ -97,14 +102,13 @@ export default function Projects() {
     ];
 
     useEffect(() => {
-        // Fade in animation
         gsap.from(".main-container", {
             opacity: 0,
             y: 100,
             duration: 1,
             ease: "power4.out",
         });
-    }, []); // Only run once when component mounts
+    }, []);
 
     return (
         <div>
@@ -115,6 +119,8 @@ export default function Projects() {
                         <p>
                             Inspiration for the next generation <br />
                             Summary of my work.
+                            <br />
+                            (see links on project page)
                         </p>
                     </div>
                     <img

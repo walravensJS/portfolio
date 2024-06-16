@@ -27,7 +27,13 @@ export default function Detail() {
         }
     }, [data]);
 
-    console.log("Data:", data); // Log the data for debugging
+    useEffect(() => {
+        if (data && data.projects) {
+            data.projects.forEach((project) => {
+                console.log("Project thumbImage URL:", project.thumbImage);
+            });
+        }
+    }, [data]);
 
     if (loading) return <p>Loading...</p>;
     if (error)
@@ -47,30 +53,48 @@ export default function Detail() {
                 <FaArrowLeft /> Go back
             </Link>
             {data.projects.map((project) => (
-                <div className="portfolio-header" key={project.id}>
-                    <div>
-                        <h1>{project.title}</h1>
-                        <div className="links">
-                            <p>
-                                <a href={project.githubUrl} target="_blank">
-                                    <FaGithub />
-                                </a>
-                            </p>
-                            <p>
-                                <a href={project.site} target="_blank">
-                                    <GoLinkExternal />
-                                </a>
-                            </p>
+                <div key={project.id}>
+                    <div className="portfolio-header">
+                        <div>
+                            <h1>{project.title}</h1>
+                            <div className="links">
+                                <p>
+                                    <a
+                                        href={project.githubUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <FaGithub />
+                                    </a>
+                                </p>
+                                <p>
+                                    <a
+                                        href={project.site}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <GoLinkExternal />
+                                    </a>
+                                </p>
+                            </div>
+                            <br />
+                            <p>{project.description}</p>
                         </div>
-                        <br />
-                        <p>{project.description}</p>
+                        {project.fullImage && (
+                            <img
+                                src={project.fullImage.url}
+                                alt={project.title}
+                            />
+                        )}
                     </div>
-                    {project.fullImage && (
-                        <img
-                            src={`${project.fullImage.url}`}
-                            alt={project.title}
-                        />
-                    )}
+                    <div className="mock">
+                        {project.thumbImage && (
+                            <img
+                                src={project.thumbImage.url}
+                                alt={project.title}
+                            />
+                        )}
+                    </div>
                 </div>
             ))}
         </div>

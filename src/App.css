@@ -681,6 +681,17 @@ footer a {
     margin-top: 3rem;
 }
 
+.mock {
+    margin-top: 2rem;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.mock img {
+    border-radius: 0.5rem;
+}
+
 /* dark mode */
 
 body.dark {

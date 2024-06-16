@@ -13,6 +13,10 @@ export const GET_PROJECT = gql`
                 url
                 fileName
             }
+            thumbImage {
+                url
+                fileName
+            }
             css
             adobe
             html

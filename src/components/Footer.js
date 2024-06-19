@@ -41,7 +41,7 @@ export default function Navigation() {
                             <p>Github</p>
                         </a>
                         <a
-                            href="https://discord.com/channels/823722533110284298/823722533110284302/1246839028771196979"
+                            href="https://www.instagram.com/walravens.js/"
                             target="blank"
                             className="social-link"
                         >

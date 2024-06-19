@@ -58,24 +58,28 @@ export default function Detail() {
                         <div>
                             <h1>{project.title}</h1>
                             <div className="links">
-                                <p>
-                                    <a
-                                        href={project.githubUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <FaGithub />
-                                    </a>
-                                </p>
-                                <p>
-                                    <a
-                                        href={project.site}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <GoLinkExternal />
-                                    </a>
-                                </p>
+                                {project.githubUrl && (
+                                    <p>
+                                        <a
+                                            href={project.githubUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <FaGithub />
+                                        </a>
+                                    </p>
+                                )}
+                                {project.site && (
+                                    <p>
+                                        <a
+                                            href={project.site}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <GoLinkExternal />
+                                        </a>
+                                    </p>
+                                )}
                             </div>
                             <br />
                             <p>{project.description}</p>

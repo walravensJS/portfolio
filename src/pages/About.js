@@ -72,7 +72,7 @@ export default function About() {
                                         pgm-stijnwalr
                                     </a>
                                 </p>
-                                <p>walravensstijn</p>
+                                <p>walravens.js</p>
                             </div>
                         </div>
                     </p>

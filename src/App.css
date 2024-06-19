@@ -682,7 +682,7 @@ footer a {
 }
 
 .mock {
-    margin-top: 2rem;
+    margin: 2rem 0;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -792,6 +792,10 @@ body.dark nav a:hover {
     }
     .nav-links {
         display: none;
+    }
+
+    video {
+        height: 100%;
     }
 
     /* Burger button styling for visibility */

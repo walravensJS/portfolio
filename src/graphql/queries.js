@@ -18,6 +18,11 @@ export const GET_PROJECTS = gql`
             react
             slug
             title
+            createdAt
+            nodeJs
+            video {
+                url
+            }
             fullImage {
                 url
             }

@@ -3,7 +3,6 @@ import { useQuery } from "@apollo/client";
 import { GET_PROJECTS } from "../graphql/queries";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../routes/routes";
-
 import gsap from "gsap";
 
 function DisplayProjects({ selectedFilter }) {
@@ -38,23 +37,23 @@ function DisplayProjects({ selectedFilter }) {
         });
     }, []);
 
-    console.log(data && data.projects);
-    console.log(selectedFilter);
-    console.log(loaded);
-    console.log(error);
-
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error : {error.message}</p>;
 
+    // Sort projects by createdAt in descending order
+    const sortedProjects = data.projects.slice().sort((a, b) => {
+        return new Date(b.createdAt) - new Date(a.createdAt);
+    });
+
     const filteredProjects = selectedFilter
-        ? data.projects.filter((project) =>
+        ? sortedProjects.filter((project) =>
               Object.keys(project).some(
                   (key) =>
                       key.toLowerCase() === selectedFilter &&
                       project[key] === true
               )
           )
-        : data.projects;
+        : sortedProjects;
 
     return filteredProjects.map((project) => (
         <Link

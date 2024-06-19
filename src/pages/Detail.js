@@ -27,14 +27,6 @@ export default function Detail() {
         }
     }, [data]);
 
-    useEffect(() => {
-        if (data && data.projects) {
-            data.projects.forEach((project) => {
-                console.log("Project thumbImage URL:", project.thumbImage);
-            });
-        }
-    }, [data]);
-
     if (loading) return <p>Loading...</p>;
     if (error)
         return (
@@ -97,6 +89,17 @@ export default function Detail() {
                                 src={project.thumbImage.url}
                                 alt={project.title}
                             />
+                        )}
+                    </div>
+                    <div>
+                        {project.video && (
+                            <video controls width="100%">
+                                <source
+                                    src={project.video.url}
+                                    type="video/mp4"
+                                />
+                                Your browser does not support the video tag.
+                            </video>
                         )}
                     </div>
                 </div>

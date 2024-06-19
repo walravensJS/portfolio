@@ -22,6 +22,9 @@ export const GET_PROJECT = gql`
             html
             illustrator
             javascript
+            video {
+                url
+            }
             photoshop
             gsap
         }

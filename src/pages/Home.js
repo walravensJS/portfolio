@@ -56,7 +56,6 @@ export default function Home() {
                             <li className="occupation-item">
                                 Full stack Developer
                             </li>
-                            <li className="occupation-item">React Developer</li>
                             <li className="occupation-item">
                                 Graphic Designer
                             </li>

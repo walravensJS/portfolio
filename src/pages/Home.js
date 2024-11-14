@@ -59,6 +59,7 @@ export default function Home() {
                             <li className="occupation-item">
                                 Graphic Designer
                             </li>
+                            <li className="occupation-item">Web Designer</li>
                         </ul>
                     </div>
                     <p className="description">

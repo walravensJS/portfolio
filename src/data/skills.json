@@ -13,6 +13,38 @@
             "image": "img/javascript.png"
         },
         {
+            "name": "Figma",
+            "image": "img/figma.png"
+        },
+        {
+            "name": "React",
+            "image": "img/react.png"
+        },
+        {
+            "name": "NextJS",
+            "image": "img/next-js.svg"
+        },
+        {
+            "name": "PHP",
+            "image": "img/php.jpg"
+        },
+
+        {
+            "name": "Craft CMS",
+            "image": "img/craft.png"
+        },
+
+        {
+            "name": "Tailwind CSS",
+            "image": "img/tailwind.png"
+        },
+
+        {
+            "name": "MySQL",
+            "image": "img/mysql.png"
+        },
+
+        {
             "name": "Adobe Photoshop",
             "image": "img/photoshop.png"
         },
@@ -23,14 +55,6 @@
         {
             "name": "Adobe InDesign",
             "image": "img/indesign.png"
-        },
-        {
-            "name": "Figma",
-            "image": "img/figma.png"
-        },
-        {
-            "name": "React",
-            "image": "img/react.png"
         }
     ]
 }

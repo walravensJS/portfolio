@@ -11,9 +11,6 @@ export default function Navigation() {
                         <NavLink to={ROUTES.home.path}>Home</NavLink>
                     </li>
                     <li className="foot-item">
-                        <NavLink to={ROUTES.contact.path}>Contact</NavLink>
-                    </li>
-                    <li className="foot-item">
                         <NavLink to={ROUTES.about.path}>About</NavLink>
                     </li>
                     <li className="foot-item">
@@ -23,27 +20,30 @@ export default function Navigation() {
                 <div className="footer-text">
                     <div className="footer-contact">
                         <h4>Stijn Walravens</h4>
-                        <p>stijn.w01@hotmail.com</p>
+                        <p>stijn.walravens@outlook.com</p>
                     </div>
                     <div className="footer-social">
                         <a
-                            href="https://www.linkedin.com/in/stijn-walravens-0a0b1a1b8/"
-                            target="blank"
+                            href="https://www.linkedin.com/in/stijn-walravens-4263b618b"
+                            target="_blank"
                             className="social-link"
+                            rel="noreferrer"
                         >
                             <p>LinkedIn</p>
                         </a>
                         <a
                             href="https://github.com/pgm-stijwalr"
-                            target="blank"
+                            target="_blank"
                             className="social-link"
+                            rel="noreferrer"
                         >
                             <p>Github</p>
                         </a>
                         <a
                             href="https://www.instagram.com/walravens.js/"
-                            target="blank"
+                            target="_blank"
                             className="social-link"
+                            rel="noreferrer"
                         >
                             <p>Instagram</p>
                         </a>

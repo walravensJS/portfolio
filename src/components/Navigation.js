@@ -8,7 +8,14 @@ import Hamburgernav from "./Hamburgernav";
 export default function Navigation() {
     return (
         <nav>
-            <h4>WALRAVENS</h4>
+            <h4>
+                <NavLink
+                    to={ROUTES.home.path}
+                    className="text-black text-decoration-none !important"
+                >
+                    WALRAVENS
+                </NavLink>
+            </h4>
             <div className="nav-links">
                 <ul>
                     <li className="nav-item">
@@ -19,9 +26,6 @@ export default function Navigation() {
                     </li>
                     <li className="nav-item">
                         <NavLink to={ROUTES.about.path}>About</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to={ROUTES.contact.path}>Contact</NavLink>
                     </li>
                 </ul>
                 <ThemeArea>

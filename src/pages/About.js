@@ -63,12 +63,20 @@ export default function About() {
                                 <p>22</p>
                                 <p>American / Belgian</p>
                                 <p>
-                                    <a href="https://www.linkedin.com/in/stijn-walravens-4263b618b/">
+                                    <a
+                                        href="https://www.linkedin.com/in/stijn-walravens-4263b618b"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
                                         View
                                     </a>
                                 </p>
                                 <p>
-                                    <a href="https://github.com/pgm-stijwalr">
+                                    <a
+                                        href="https://github.com/pgm-stijwalr"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
                                         pgm-stijnwalr
                                     </a>
                                 </p>

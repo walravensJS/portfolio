@@ -159,6 +159,7 @@ h1 {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    fill: black;
 }
 
 .circle-button:hover {
@@ -168,7 +169,7 @@ h1 {
 }
 
 .circle-button:visited {
-    color: black;
+    fill: black;
 }
 
 .main-container {
@@ -207,6 +208,24 @@ h1 {
     justify-content: space-between;
     width: 70%;
     margin: 2rem auto;
+}
+
+NavLink {
+    text-decoration: none;
+    color: #1d1d1d;
+}
+
+NavLink:hover {
+    color: black;
+}
+
+Navlink:visited {
+    color: #1d1d1d;
+}
+
+li a {
+    color: #1d1d1d;
+    fill: #1d1d1d;
 }
 
 .skill-item {
@@ -440,151 +459,6 @@ footer a {
     margin-bottom: 2rem;
 }
 
-/* form */
-.form-container {
-    width: 400px;
-    background: linear-gradient(#f7f7f7, #f3f3f3) padding-box,
-        linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
-    border: 2px solid transparent;
-    padding: 32px 24px;
-    font-size: 14px;
-    font-family: inherit;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    box-sizing: border-box;
-    border-radius: 16px;
-    background-size: 200% 100%;
-    animation: gradient 5s ease infinite;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.form-container button:active {
-    scale: 0.95;
-}
-
-.form-container .form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-container .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.form-container .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #717171;
-    font-weight: 600;
-    font-size: 12px;
-}
-
-.form-container .form-group input {
-    width: 100%;
-    padding: 12px 16px;
-    border-radius: 8px;
-    color: #222222;
-    font-family: inherit;
-    background-color: transparent;
-    border: 1px solid #414141;
-}
-
-.form-container .form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border-radius: 8px;
-    resize: none;
-    color: #222222;
-    height: 96px;
-    border: 1px solid #414141;
-    background-color: transparent;
-    font-family: inherit;
-}
-
-.form-container .form-group input::placeholder {
-    opacity: 0.5;
-}
-
-.form-container .form-group input:focus {
-    outline: none;
-    border-color: #e81cff;
-}
-
-.form-container .form-group textarea:focus {
-    outline: none;
-    border-color: #e81cff;
-}
-
-.form-container .form-submit-btn {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    align-self: flex-start;
-    font-family: inherit;
-    color: #3a3a3a;
-    font-weight: 600;
-    width: 40%;
-    background: rgb(241, 241, 241);
-    border: 1px solid #414141;
-    padding: 12px 16px;
-    font-size: inherit;
-    gap: 8px;
-    margin-top: 8px;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
-.form-container .form-submit-btn:hover {
-    background-color: #fff;
-    border-color: #fff;
-}
-
-.centre-mail {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.form-container h1 {
-    color: #3b3b3b;
-}
-
-.links {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.links svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: rgb(37, 37, 37);
-}
-
-.links a {
-    text-decoration: none;
-}
-
 /* theme switch*/
 
 .toggle-button {
@@ -755,6 +629,11 @@ body.dark nav a:hover {
 .header-mob {
     display: none;
 }
+
+div.dark {
+    color: #fff;
+}
+
 .return {
     color: #262626;
     text-decoration: none;
@@ -774,7 +653,6 @@ body.dark nav a:hover {
 /**/
 /**/
 /**/
-
 @media (max-width: 850px) {
     body {
         text-align: left;
@@ -956,6 +834,7 @@ body.dark nav a:hover {
     .about-pic-mobile {
         display: block;
         margin-top: 3rem;
+        fill: black;
     }
 
     .about-pic-mobile .pic {
@@ -972,4 +851,10 @@ body.dark nav a:hover {
     .my-information {
         width: 100%;
     }
+}
+
+a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
 }

@@ -10,6 +10,11 @@ export const GET_PROJECTS = gql`
             adobe
             gsap
             html
+            php
+            mySql
+            nextJs
+            tailwindCss
+            craftCms
             id
             illustrator
             javascript

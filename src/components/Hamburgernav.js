@@ -32,11 +32,6 @@ const Hamburgernav = () => {
                             About
                         </NavLink>
                     </li>
-                    <li className="nav-item">
-                        <NavLink to={ROUTES.contact.path} onClick={toggleMenu}>
-                            Contact
-                        </NavLink>
-                    </li>
                 </ul>
             </div>
         </div>

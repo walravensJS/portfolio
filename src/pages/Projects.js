@@ -39,6 +39,7 @@ function DisplayProjects({ selectedFilter }) {
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error : {error.message}</p>;
+    console.log(data);
 
     const sortedProjects = data.projects.slice().sort((a, b) => {
         return new Date(b.createdAt) - new Date(a.createdAt);
@@ -102,6 +103,8 @@ export default function Projects() {
         "Tailwind CSS",
         "PHP",
         "MySQL",
+        "NextJS",
+        "Strapi",
     ];
 
     useEffect(() => {

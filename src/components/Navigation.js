@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../routes/routes";
-import ThemeSwitcher from "./Themeswitcher";
-import { ThemeArea } from "../context/ThemeContext";
+// import ThemeSwitcher from "./Themeswitcher";
+// import { ThemeArea } from "../context/ThemeContext";
 import Hamburgernav from "./Hamburgernav";
 
 export default function Navigation() {
@@ -28,9 +28,9 @@ export default function Navigation() {
                         <NavLink to={ROUTES.about.path}>About</NavLink>
                     </li>
                 </ul>
-                <ThemeArea>
+                {/* <ThemeArea>
                     <ThemeSwitcher />
-                </ThemeArea>
+                </ThemeArea> */}
             </div>
             <Hamburgernav />
         </nav>

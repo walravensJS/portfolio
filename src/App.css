@@ -183,6 +183,7 @@ h1 {
     text-align: center;
     color: #1d1d1d;
     margin: 5rem 0rem;
+    border-radius: 1rem;
     -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
@@ -832,7 +833,9 @@ div.dark {
     }
 
     .about-pic-mobile {
-        display: block;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         margin-top: 3rem;
         fill: black;
     }
@@ -850,6 +853,13 @@ div.dark {
 
     .my-information {
         width: 100%;
+    }
+
+    .about-pic-mobile {
+        width: 100%;
+    }
+    .about-pic-mobile .pic {
+        margin: auto;
     }
 }
 

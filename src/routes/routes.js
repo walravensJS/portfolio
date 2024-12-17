@@ -3,14 +3,14 @@ export const ROUTES = {
         path: "/",
         title: "Home",
     },
-    // about: {
-    //     path: "/about",
-    //     title: "About",
-    // },
-    // project: {
-    //     path: "/projects",
-    //     title: "Projects",
-    // },
+    about: {
+        path: "/about",
+        title: "About",
+    },
+    project: {
+        path: "/projects",
+        title: "Projects",
+    },
     // detail: {
     //     path: "/projects/:slug",
     //     title: "Detail",

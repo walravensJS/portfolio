@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('assets/fonts/DrukWide.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'heading';
+    src: url('assets/fonts/DrukSuper.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+nav {
+    font-family: 'MyFont';
+    font-size: 1.5rem;
+    color: white
+}
+
+h1 {
+    font-family: 'heading';
+    font-size: 3rem;
+    color: white
+}

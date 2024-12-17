@@ -9,8 +9,9 @@ import "./App.css";
 import {
 
     Home,
-
+    Projects,
     NotFound,
+    About,
 
 } from "./pages/index";
 import Root from "./layouts/Root";
@@ -19,6 +20,8 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<Root />} errorElement={<NotFound />}>
             <Route path={ROUTES.home.path} element={<Home />} />
+            <Route path={ROUTES.about.path} element={<About />} />
+            <Route path={ROUTES.project.path} element={<Projects />} />
 
         </Route>
     )

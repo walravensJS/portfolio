@@ -7,7 +7,7 @@ export default function Home() {
 
     return (
         <div className="">
-            <div className="flex w-full justify-center items-center mt-10">
+            <div className="flex w-full justify-center items-center">
             <Header />
             <div className="flex flex-col items-center w-full">
             <MyCard />

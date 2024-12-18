@@ -2,9 +2,10 @@ import React from "react";
 
 export default function Navigation() {
     return (
-        <nav className="flex justify-between items-center h-16 bg-black text-white relative shadow-sm font-mono w-[95%] m-auto" role="navigation">
+        <nav className="w-full shadow" role="navigation">
+            <div className="flex justify-between items-center h-16 relative shadow-sm font-mono w-[95%] m-auto">
             <a href="/" >
-            <img src="/img/mylogo.png" alt="profile" /></a>
+            <img src="/img/mylogo.png" alt="profile" className="invert" /></a>
             <ul className="flex items-center gap-10"> 
                 <li className="">
                     <a href="/" className="text-lg font-bold">HOME</a>
@@ -16,6 +17,7 @@ export default function Navigation() {
                     <a href="/about" className="text-lg font-bold">ABOUT</a>
                 </li>
             </ul>
+            </div>
         </nav>
     );
 }

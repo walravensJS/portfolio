@@ -5,7 +5,7 @@ import Footer from "@design/Footer";
 
 export default function Root() {
     return (
-        <body className="bg-black w-full">
+        <body className="">
             <Navigation />
             <main className="w-[95%] mx-auto">
         

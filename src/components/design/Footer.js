@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="border-t-1 border-white text-white mt-10 h-fit pb-10">
+    <footer className="border-t-1  mt-10 h-fit pb-10 text-zinc-400 ">
         <div className='flex justify-between w-[95%] m-auto'>
         <div>
             <ul className="flex justify-between gap-5">
@@ -17,8 +17,8 @@ export default function Footer() {
                 </li>
             </ul>
         </div>
-        <div>
-            <p>
+        <div className=''>
+            <p className='font-bold text-black'>
                 Stijn Walravens
             </p>
             <p className='mt-2'>

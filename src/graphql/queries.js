@@ -55,3 +55,21 @@ query Images{
   }
 }
 `;
+
+export const GET_CONTRIBUTIONS = `
+  query($username: String!) {
+  user(login: $username) {
+    contributionsCollection {
+      contributionCalendar {
+        weeks {
+          contributionDays {
+            contributionCount
+            date
+          }
+        }
+      }
+    }
+  }
+}
+
+`

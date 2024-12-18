@@ -11,6 +11,7 @@ module.exports = {
             "@pages": path.resolve(__dirname, "src/pages/"),
             "@graphql": path.resolve(__dirname, "src/graphql/"),
             "@routes": path.resolve(__dirname, "src/routes/"),
+            "@services": path.resolve(__dirname, "src/services/"),
 
         }
     }

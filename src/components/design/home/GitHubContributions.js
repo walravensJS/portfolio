@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaGithub } from "react-icons/fa";
 
 
 function GitHubContributions({ username }) {
@@ -30,9 +31,10 @@ function GitHubContributions({ username }) {
 
     return (
         <div className='flex items-center gap-5'>
+            <FaGithub className='text-purple-500' />
 
-            <div className="text-zinc-500">
-            <h2>GitHub Contributions</h2>
+            <div >
+            <h2 className='font-bold'>GitHub Contributions</h2>
             <p className="text-sm text-black">
                 {contributions === null
                     ? 'Loading contributions...'
@@ -45,7 +47,7 @@ function GitHubContributions({ username }) {
 
 export default function GithubWidget() {
     return (
-        <div className="bg-zinc-800 p-4 shadow-md rounded-md">
+        <div >
             <GitHubContributions username="pgm-stijwalr" />
         </div>
     );

@@ -13,7 +13,7 @@ export default function Header() {
 
             <Occupation />
             <p className='mt-5 mb-5'>
-            22 year old, Belgian/Native American fullstack developer.
+            22 year old, Belgian/Native American fullstack developer and Designer.
 
 
             </p>

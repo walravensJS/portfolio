@@ -11,8 +11,8 @@ export const ROUTES = {
         path: "/projects",
         title: "Projects",
     },
-    // detail: {
-    //     path: "/projects/:slug",
-    //     title: "Detail",
-    // },
+    detail: {
+        path: "/projects/:slug",
+        title: "Detail",
+    },
 };

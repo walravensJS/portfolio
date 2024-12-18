@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Navigation() {
     return (
-        <nav className="flex justify-between items-center h-16 bg-black text-white relative shadow-sm font-mono" role="navigation">
+        <nav className="flex justify-between items-center h-16 bg-black text-white relative shadow-sm font-mono w-[95%] m-auto" role="navigation">
             <a href="/" >
             <img src="/img/mylogo.png" alt="profile" /></a>
             <ul className="flex items-center gap-10"> 

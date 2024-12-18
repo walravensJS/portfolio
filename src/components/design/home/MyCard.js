@@ -57,9 +57,11 @@ export default function MyCard() {
 
   return (
     <div className='w-full flex justify-center'>
-        <div ref={cardRef} className=" w-[50%]" style={{ position: 'relative', display: 'inline-block' }}>
+        <a href='/about' className='w-[40%]'>
+        <div ref={cardRef} className="" style={{ position: 'relative', display: 'inline-block' }}>
             <img ref={imgRef} src="/img/card.png" alt="Plains" />
         </div>
+        </a>
     </div>
   );
 }

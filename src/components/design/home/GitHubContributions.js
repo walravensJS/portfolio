@@ -25,8 +25,7 @@ function GitHubContributions({ username }) {
             })
             .catch((error) => console.error('Error fetching GitHub contributions:', error));
     }, [username])
-    
-    console.log(contributions)
+
     ;
 
     return (

@@ -13,7 +13,7 @@ const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
 
 export default function Header() {
   return (
-    <div className='w-5/6 h-screen flex flex-col justify-around gap-10'>
+    <div className='flex flex-col justify-around gap-10'>
         <div className=' text-whit gap-10'>
 
             <div className=''>

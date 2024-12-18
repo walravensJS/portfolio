@@ -11,7 +11,7 @@ export default function Navigation() {
                     <a href="/" className="text-lg font-bold">HOME</a>
                 </li>
                 <li className="">
-                    <a href="/projects" className="text-lg font-bold">PROJECTS</a>
+                    <a href="/projects" className="text-lg font-bold">CASES</a>
                 </li>
                 <li className="">
                     <a href="/about" className="text-lg font-bold">ABOUT</a>

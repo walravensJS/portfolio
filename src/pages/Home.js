@@ -1,19 +1,19 @@
 import React from "react";
 import Header from "@design/home/Header";
 import MyCard from "@design/home/MyCard";
-import Looking from "@design/home/Looking";
+import FetchFeaturedPost from "@functional/Home/FetchFeaturedPost";
 
 export default function Home() {
 
     return (
         <div className="">
-            <div className="flex w-full justify-center items-center">
-            <Header />
-            <div className="flex flex-col items-center w-full">
-            <MyCard />
-            <Looking />
+            <div className="flex justify-around m-auto items-center h-[85vh]">
+                <Header/>
+                <div>
+                    <MyCard />
+                </div>
             </div>
-            </div>
+            <FetchFeaturedPost />
         </div>
     );
 }

@@ -4,22 +4,19 @@
 
 @font-face {
     font-family: 'MyFont';
-    src: url('assets/fonts/DrukWide.otf');
+    src: url('assets/fonts/HalenoirCompact-Regular.otf');
     font-weight: normal;
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'heading';
-    src: url('assets/fonts/DrukSuper.otf');
-    font-weight: normal;
-    font-style: normal;
-}
+@font-face{
+    font-family: 'title';
+    src: url('assets/fonts/HalenoirExpanded-Bold.otf');
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+}
 
 body {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'MyFont', monospace;
 }
 
 nav {
@@ -28,14 +25,15 @@ nav {
 }
 
 h1 {
-    font-family: 'heading';
+    font-family: 'title';
     font-size: 5rem;
+    text-transform: uppercase;
 
 }
 
 
 p {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'MyFont', monospace;
     font-size: 1rem;
 }
 

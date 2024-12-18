@@ -27,7 +27,8 @@ nav {
 h1 {
     font-family: 'heading';
     font-size: 5rem;
-    color: white
+    color: white;
+
 }
 
 h2{
@@ -37,6 +38,95 @@ h2{
 
 p {
     font-family: 'Roboto Mono', monospace;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: white
 }
+
+.red-circle {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.5rem;
+    background-color: green;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 1rem 0px rgba(0, 255, 0, 1);
+    -moz-box-shadow: 0px 0px 1rem 0px rgba(0, 255, 0, 1);
+    box-shadow: 0px 0px 1rem 0px rgba(0, 255, 0, 1);
+    animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0px 0px 1rem 0px rgba(0, 255, 0, 1);
+        }
+        50% {
+            transform: scale(1.2);
+            box-shadow: 0px 0px 1.5rem 0px rgba(0, 255, 0, 0.75);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0px 0px 1rem 0px rgba(0, 255, 0, 1);
+        }
+    }
+
+    .card3d {
+        margin: 4px;
+        transform: scale(1);
+        perspective: 600px;
+    }
+    
+    .card3d:hover {
+        z-index: 10;
+        transform: scale(1.1);
+    }
+    
+    .card3d,
+    .card3d img {
+        transition: all 250ms ease-out;
+    }
+
+
+    .occupation-container {
+        height: 2rem;
+        overflow: hidden;
+    }
+    
+    .occupation {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        animation: slide 9s infinite;
+    }
+    
+    @keyframes slide {
+        0% {
+            transform: translateY(0);
+        }
+        20% {
+            transform: translateY(0);
+        }
+        30% {
+            transform: translateY(-2rem);
+        }
+        50% {
+            transform: translateY(-2rem);
+        }
+        60% {
+            transform: translateY(-4rem);
+        }
+        80% {
+            transform: translateY(-4rem);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    
+    .occupation-item {
+        font-size: 1.25rem;
+        height: 2rem;
+        line-height: 2rem;
+        font-family: 'MyFont', monospace;
+        color: white;
+    }
+    

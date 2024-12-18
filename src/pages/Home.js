@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <div className="">
             <Navigation />
-            <div className="flex flex-col w-full">
+            <div className="flex w-full justify-between">
             <Header />
             <MyCard />
             </div>

@@ -1,55 +1,65 @@
-import React, { useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 
+function map(val, minA, maxA, minB, maxB) {
+  return minB + ((val - minA) * (maxB - minB)) / (maxA - minA);
+}
+
 export default function MyCard() {
+  const cardRef = useRef(null); // Reference to the card
+  const imgRef = useRef(null); // Reference to the image
+
   useEffect(() => {
-    // Animate the shine effect using GSAP
-    gsap.to(".shine", {
-      backgroundPosition: "200% 0",
-      duration: 2, // duration of the animation
-      repeat: -1, // repeat the animation indefinitely
-      ease: "linear", // linear easing for smooth animation
-      stagger: 0.5, // optional stagger for multiple elements if needed
-    });
+    const card = cardRef.current;
+    const img = imgRef.current;
+
+    const handleMouseMove = (ev) => {
+      const imgRect = card.getBoundingClientRect();
+      const width = imgRect.width;
+      const height = imgRect.height;
+
+      // Calculate mouse position relative to the card element
+      const mouseX = ev.clientX - imgRect.left;
+      const mouseY = ev.clientY - imgRect.top;
+
+      const rotateY = map(mouseX, 0, width, -25, 25);
+      const rotateX = map(mouseY, 0, height, 25, -25);
+      const brightness = map(mouseY, 0, height, 1.5, 0.5);
+
+      // GSAP animation for smooth transition
+      gsap.to(img, {
+        duration: 0.3, // Smooth transition duration
+        rotationX: rotateX,
+        rotationY: rotateY,
+        filter: `brightness(${brightness})`,
+      });
+    };
+
+    const handleMouseLeave = () => {
+      // Reset the image properties when mouse leaves the card with GSAP
+      gsap.to(img, {
+        duration: 0.3, // Smooth reset transition
+        rotationX: 0,
+        rotationY: 0,
+        filter: 'brightness(1)',
+      });
+    };
+
+    card.addEventListener('mousemove', handleMouseMove);
+    card.addEventListener('mouseleave', handleMouseLeave);
+
+    // Cleanup the event listeners when the component is unmounted
+    return () => {
+      card.removeEventListener('mousemove', handleMouseMove);
+      card.removeEventListener('mouseleave', handleMouseLeave);
+    };
   }, []);
 
   return (
-    <div className='flex justify-center w-1/2'>
-        <div className="relative bg-gradient-to-b from-purple-200 to-purple-500 w-80 h-[500px] rounded-xl border-4 border-gray-200 shadow-2xl p-4 flex flex-col justify-between overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-20 animate-shine shine"></div>
-      <div className="flex justify-between items-center z-10">
-        <h3 className="text-gray-800 font-bold">Belgian / Native American</h3>
-        <span className="text-gray-600 font-semibold">HP 100</span>
-      </div>
-
-      <div className="w-full h-48 bg-gray-200 rounded-lg overflow-hidden shadow-inner flex items-center justify-center z-10">
-        <img
-          src="https://via.placeholder.com/150"
-          alt="Character"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      <div className="mt-4 text-gray-700 z-10">
-        <p className="font-medium text-sm">
-          Known for its rich heritage and versatile skills. A unique blend of cultures ready for any challenge.
-        </p>
-      </div>
-
-      <div className="mt-4 z-10">
-        <p className="font-bold text-gray-800">Abilities:</p>
-        <ul className="list-disc list-inside text-gray-700 text-sm">
-          <li>Adaptive Knowledge</li>
-          <li>Cultural Resilience</li>
-          <li>Strategic Thinking</li>
-        </ul>
-      </div>
-
-      <div className="flex justify-between items-center mt-4 z-10">
-        <span className="text-gray-600 font-semibold text-sm">#001</span>
-        <span className="text-gray-600 font-semibold text-sm">Rare</span>
-      </div>
-    </div>
+    <div className='w-full flex justify-center'>
+        <div ref={cardRef} className=" w-[50%]" style={{ position: 'relative', display: 'inline-block' }}>
+            <img ref={imgRef} src="/img/card.png" alt="Plains" />
+        </div>
     </div>
   );
 }

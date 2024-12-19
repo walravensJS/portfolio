@@ -99,7 +99,6 @@ export default function Detail() {
                     </div>
                     <p className="text-lg">{project.longDescription}</p>
 
-                    {/* Display skills */}
                     <div className="skills mt-6">
                         <h2 className="text-xl font-semibold">Skills</h2>
                         <ul className="list-disc pl-6">

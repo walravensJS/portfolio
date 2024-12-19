@@ -1,8 +1,11 @@
 import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 export default function Footer() {
     return (
-        <footer className="border-t-1  mt-10 h-fit pb-10 text-zinc-400 ">
+        <footer className="border-t-1  mt-10 pb-10 text-zinc-400 ">
             <div className="flex justify-between w-[95%] m-auto">
                 <div>
                     <ul className="flex justify-between gap-5">
@@ -16,6 +19,27 @@ export default function Footer() {
                             <a href="/about">About</a>
                         </li>
                     </ul>
+
+                    <div className="flex justify-center gap-4 mt-4">
+                        {[
+                            { href: "https://github.com", icon: FaGithub },
+                            { href: "https://linkedin.com", icon: FaLinkedin },
+                            {
+                                href: "https://instagram.com",
+                                icon: FaSquareInstagram,
+                            },
+                        ].map(({ href, icon: Icon }, index) => (
+                            <motion.a
+                                key={index}
+                                href={href}
+                                className="p-3"
+                                whileHover={{ scale: 1.2, rotate: 10 }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                <Icon size={24} />
+                            </motion.a>
+                        ))}
+                    </div>
                 </div>
                 <div className="">
                     <p className="font-bold text-black">Stijn Walravens</p>
@@ -24,37 +48,6 @@ export default function Footer() {
                             stijn.walravens@outlook.com
                         </a>
                     </p>
-
-                    <ul className="mt-5">
-                        <li>
-                            <a
-                                href="https://www.linkedin.com/in/stijn-walravens-4263b618b?original_referer="
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                LinkedIn
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://github.com/pgm-stijwalr"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                Github
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://www.instagram.com/walravens.js/"
-                                target="_blank"
-                                class="social-link"
-                                rel="noreferrer"
-                            >
-                                <p>Instagram</p>
-                            </a>{" "}
-                        </li>
-                    </ul>
                 </div>
             </div>
         </footer>

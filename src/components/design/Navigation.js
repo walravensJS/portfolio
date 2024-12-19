@@ -21,17 +21,26 @@ export default function Navigation() {
                 {/* Desktop Menu */}
                 <ul className="hidden md:flex items-center gap-10">
                     <li>
-                        <a href="/" className="text-lg font-bold">
+                        <a
+                            href="/"
+                            className="text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                        >
                             HOME
                         </a>
                     </li>
                     <li>
-                        <a href="/projects" className="text-lg font-bold">
+                        <a
+                            href="/projects"
+                            className="text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                        >
                             CASES
                         </a>
                     </li>
                     <li>
-                        <a href="/about" className="text-lg font-bold">
+                        <a
+                            href="/about"
+                            className="text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                        >
                             ABOUT
                         </a>
                     </li>
@@ -120,7 +129,7 @@ export default function Navigation() {
                             <li>
                                 <a
                                     href="/"
-                                    className="font-bold"
+                                    className="font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
                                     onClick={toggleModal}
                                 >
                                     HOME
@@ -129,7 +138,7 @@ export default function Navigation() {
                             <li>
                                 <a
                                     href="/projects"
-                                    className="font-bold"
+                                    className="font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
                                     onClick={toggleModal}
                                 >
                                     CASES
@@ -138,7 +147,7 @@ export default function Navigation() {
                             <li>
                                 <a
                                     href="/about"
-                                    className="font-bold"
+                                    className="font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
                                     onClick={toggleModal}
                                 >
                                     ABOUT

@@ -12,6 +12,7 @@ import {
     NotFound,
     About,
     Detail,
+    Contact,
 } from "./pages/index";
 import Root from "./layouts/Root";
 import { ROUTES } from "./routes/routes";
@@ -22,7 +23,7 @@ const router = createBrowserRouter(
             <Route path={ROUTES.about.path} element={<About />} />
             <Route path={ROUTES.project.path} element={<Projects />} />
             <Route path={ROUTES.detail.path} element={<Detail />} />
-
+            <Route path={ROUTES.contact.path} element={<Contact />} />
         </Route>
     )
 );

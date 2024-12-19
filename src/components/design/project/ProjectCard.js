@@ -1,50 +1,85 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import Skeleton from "react-loading-skeleton"; // Import the skeleton loader
 import { ROUTES } from "@routes/routes";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, isLoading }) {
     return (
         <Link
             to={`${ROUTES.project.path}/${project.slug}`}
             key={`project-${project.slug}`}
         >
-            <div className="w-1/3 bg-zinc-800 rounded-lg shadow-lg">
+            <motion.div
+                whileHover={{ scale: 1.05, translateY: -10 }}
+                transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                className="rounded-lg shadow-lg overflow-hidden"
+            >
                 {/* Project Image */}
-                {project.imageUrl ? (
+                {isLoading || !project.imageUrl ? (
+                    <Skeleton height={320} width="100%" />
+                ) : (
                     <img
                         src={project.imageUrl}
                         alt={project.title}
                         className="w-full h-80 object-cover rounded-t-lg"
                     />
-                ) : (
-                    <div className="w-full h-40 bg-gray-700 flex items-center justify-center rounded-t-lg">
-                        <span>No Image</span>
-                    </div>
                 )}
 
                 <div className="p-4">
-                    <h2 className="text-xl font-bold">{project.title}</h2>
-                    <p className="text-gray-400">{project.shortDescription}</p>
+                    {/* Title */}
+                    {isLoading ? (
+                        <Skeleton height={24} width="60%" />
+                    ) : (
+                        <h2 className="text-xl font-bold">{project.title}</h2>
+                    )}
 
-                    {project.skills && project.skills.length > 0 && (
-                        <div className="mt-2">
-                            <h3 className="text-sm font-semibold text-gray-300">
-                                Skills:
-                            </h3>
-                            <ul className="flex flex-wrap gap-2">
-                                {project.skills.map((skill) => (
-                                    <li
-                                        key={skill.id}
-                                        className="bg-gray-600 text-sm px-2 py-1 rounded"
-                                    >
-                                        {skill.title}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                    {/* Description */}
+                    {isLoading ? (
+                        <Skeleton height={20} width="80%" />
+                    ) : (
+                        <p className="text-gray-400">
+                            {project.shortDescription}
+                        </p>
+                    )}
+
+                    {/* Skills List */}
+                    {isLoading ? (
+                        <Skeleton height={18} width="40%" />
+                    ) : (
+                        project.skills &&
+                        project.skills.length > 0 && (
+                            <div className="mt-2">
+                                <h3 className="text-sm font-semibold text-gray-300">
+                                    Skills:
+                                </h3>
+                                <div className="skills mt-6">
+                                    <h2 className="text-xl font-semibold">
+                                        Skills
+                                    </h2>
+                                    <ul className="list-disc pl-6">
+                                        {project.skill &&
+                                        project.skill.length > 0 ? (
+                                            project.skill.map(
+                                                (skill, index) => (
+                                                    <li key={index}>
+                                                        {skill.title}
+                                                    </li>
+                                                )
+                                            )
+                                        ) : (
+                                            <p>
+                                                No skills listed for this
+                                                project
+                                            </p>
+                                        )}
+                                    </ul>
+                                </div>
+                            </div>
+                        )
                     )}
                 </div>
-            </div>
+            </motion.div>
         </Link>
     );
 }

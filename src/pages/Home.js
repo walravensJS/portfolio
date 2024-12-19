@@ -3,20 +3,44 @@ import Header from "@design/home/Header";
 import MyCard from "@design/home/MyCard";
 import FetchFeaturedPost from "@functional/Home/FetchFeaturedPost";
 import Tools from "@design/home/Tools";
+import { motion } from "framer-motion";
+import CardLinks from "@design/home/CardLinks";
 
 export default function Home() {
     return (
         <div>
-            <div className=" w-[95%] mx-auto">
-                <div className="flex justify-center items-center h-[85vh]">
-                    <Header />
-                    <div className="flex justify-center items-center">
+            <div className="w-[95%] mx-auto">
+                {/* Responsive layout: Reverse order for mobile */}
+                <div className="flex flex-col-reverse lg:flex-row justify-center items-center h-[85vh] gap-10">
+                    {/* Animated Header */}
+                    <motion.div
+                        className="lg:mr-10"
+                        initial={{ opacity: 0, y: -50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                        <Header />
+                    </motion.div>
+
+                    {/* Animated Card */}
+                    <motion.div
+                        className="flex justify-center items-center"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{
+                            duration: 0.8,
+                            delay: 0.5,
+                            type: "spring",
+                            stiffness: 100,
+                        }}
+                    >
                         <MyCard />
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             <FetchFeaturedPost />
             <Tools />
+            <CardLinks />
         </div>
     );
 }

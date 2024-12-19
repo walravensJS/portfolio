@@ -1,54 +1,55 @@
-import React from 'react'
-import Occupation from './Occupation'
-import GithubWidget from './GitHubContributions'
+import React from "react";
+import Occupation from "./Occupation";
+import GithubWidget from "./GitHubContributions";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { MdClass } from "react-icons/md";
 
 const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
 const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
 
-
-
-
-
 export default function Header() {
-  return (
-    <div className='flex flex-col justify-around gap-10'>
-        <div className=' text-whit gap-10'>
-
-            <div className=''>
-              <h1 className='leading-none'>
-                Stijn
-                  <br/>
-                Walravens
-              </h1>
+    return (
+        <div className="flex flex-col lg:flex-col w-full justify-between gap-10 px-5 lg:px-20 py-10">
+            {/* Left Section */}
+            <div className="flex flex-col gap-6 lg:w-full">
+                <div>
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl leading-none font-bold">
+                        Stijn
+                        <br />
+                        Walravens
+                    </h1>
+                </div>
+                <Occupation />
+                <p className="text-sm md:text-base lg:text-lg mt-4 mb-4">
+                    22-year-old Belgian/Native American full-stack developer and
+                    Designer.
+                </p>
+                <div className="flex gap-3 items-center text-purple-500 font-bold hover:cursor-pointer">
+                    <a
+                        href="/contact"
+                        rel="noreferrer"
+                        className="text-sm md:text-base"
+                    >
+                        Reach out
+                    </a>
+                    <FaExternalLinkAlt />
+                </div>
             </div>
 
-            <Occupation />
-            <p className='mt-5 mb-5'>
-            22 year old, Belgian/Native American fullstack developer and Designer.
-            </p>
+            {/* Right Section */}
+            <div className="flex flex-col lg:flex-row lg:w-full gap-8">
+                {/* GitHub Widget */}
+                <GithubWidget username={username} token={token} />
 
-            <div className='flex gap-5 items-center text-purple-500 font-bold hover:cursor-pointer'>
-              <a href='https://www.linkedin.com/in/stijn-walravens-7b0b4b1b3/' target='_blank' rel='noreferrer'>
-                Reach out
-              </a>
-              <FaExternalLinkAlt />
+                {/* Current Project */}
+                <div className="flex items-center gap-4">
+                    <MdClass className="text-purple-500 text-3xl" />
+                    <div>
+                        <h2 className="font-bold text-lg">Current Project</h2>
+                        <p className="text-sm md:text-base">Logo design</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div className='flex w-full justify-between gap-10'>
-              <GithubWidget username={username} token={token}  />
-              <div className='flex items-center gap-5'>
-              <MdClass 
-                className='text-purple-500'
-              />
-               <div>
-                <h2 className='font-bold'>Current Project</h2>
-                <p>Logo design</p>
-               </div>
-              </div>
-          </div>
-    
-    </div>
-  )
+    );
 }

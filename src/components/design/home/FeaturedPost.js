@@ -5,44 +5,33 @@ import { ROUTES } from "@routes/routes";
 export default function FeaturedPost({ project }) {
     return (
         <Link
-        to={`${ROUTES.project.path}/${project.slug}`}
-        key={`project-${project.slug}`}
+            to={`${ROUTES.project.path}/${project.slug}`}
+            key={`project-${project.slug}`}
+            className="w-full"
         >
-            <div className="w-fullrounded-lg shadow-lg">
-            {/* Project Image */}
-            {project.imageUrl ? (
-                <img
-                    src={project.imageUrl}
-                    alt={project.title}
-                    className="w-full h-80 object-cover rounded-t-lg"
-                />
-            ) : (
-                <div className="w-full h-40 bg-gray-700 flex items-center justify-center rounded-t-lg">
-                    <span>No Image</span>
-                </div>
-            )}
-
-            <div className="p-4">
-                <h2 className="text-xl font-bold">{project.title}</h2>
-                <p className="text-gray-400">{project.shortDescription}</p>
-                
-                {project.skills && project.skills.length > 0 && (
-                    <div className="mt-2">
-                        <h3 className="text-sm font-semibold text-gray-300">Skills:</h3>
-                        <ul className="flex flex-wrap gap-2">
-                            {project.skills.map((skill) => (
-                                <li
-                                    key={skill.id}
-                                    className="bg-gray-600 text-sm px-2 py-1 rounded"
-                                >
-                                    {skill.title}
-                                </li>
-                            ))}
-                        </ul>
+            <div className="w-full relative">
+                {/* Project Image */}
+                {project.imageUrl ? (
+                    <img
+                        src={project.imageUrl}
+                        alt={project.title}
+                        className="w-full h-80 object-cover "
+                    />
+                ) : (
+                    <div className="w-full h-40 bg-gray-700 flex items-center justify-center">
+                        <span>No Image</span>
                     </div>
                 )}
+
+                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-75"></div>
+
+                <div className="absolute inset-0 flex items-center justify-center text-white p-4">
+                    <div className="text-center">
+                        <h2 className="text-xl font-bold">{project.title}</h2>
+                        <p className="text-sm">View</p>
+                    </div>
+                </div>
             </div>
-        </div>
         </Link>
     );
 }

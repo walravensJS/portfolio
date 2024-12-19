@@ -4,8 +4,16 @@ import { GET_PROJECTS, GET_IMAGES } from "@graphql/queries";
 import FeaturedPost from "@design/home/FeaturedPost";
 
 export default function FetchFeaturedPost() {
-    const { loading: projectsLoading, error: projectsError, data: projectsData } = useQuery(GET_PROJECTS);
-    const { loading: imagesLoading, error: imagesError, data: imagesData } = useQuery(GET_IMAGES);
+    const {
+        loading: projectsLoading,
+        error: projectsError,
+        data: projectsData,
+    } = useQuery(GET_PROJECTS);
+    const {
+        loading: imagesLoading,
+        error: imagesError,
+        data: imagesData,
+    } = useQuery(GET_IMAGES);
 
     const [featuredProject, setFeaturedProject] = useState(null);
 
@@ -22,21 +30,21 @@ export default function FetchFeaturedPost() {
             }));
 
             // Select a random project
-            const randomProject = projects[Math.floor(Math.random() * projects.length)];
+            const randomProject =
+                projects[Math.floor(Math.random() * projects.length)];
             setFeaturedProject(randomProject);
         }
     }, [projectsData, imagesData]);
 
     if (projectsLoading || imagesLoading) return <p>Loading...</p>;
-    if (projectsError || imagesError) return <p>Error: {projectsError?.message || imagesError?.message}</p>;
+    if (projectsError || imagesError)
+        return <p>Error: {projectsError?.message || imagesError?.message}</p>;
 
     if (!featuredProject) return <p>No project available.</p>;
 
     return (
-        <div>
-            <div className="flex justify-center items-center w-full">
-                <FeaturedPost project={featuredProject} className="w-full m-auto"/>
-            </div>
+        <div className="flex justify-center items-center w-full">
+            <FeaturedPost project={featuredProject} />
         </div>
     );
 }

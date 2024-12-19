@@ -5,10 +5,9 @@ import Footer from "@design/Footer";
 
 export default function Root() {
     return (
-        <body className="">
+        <body>
             <Navigation />
-            <main className="w-[95%] mx-auto">
-        
+            <main>
                 <Outlet />
             </main>
             <Footer />

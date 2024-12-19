@@ -101,15 +101,17 @@ export default function Detail() {
 
                     <div className="skills mt-6">
                         <h2 className="text-xl font-semibold">Skills</h2>
-                        <ul className="list-disc pl-6">
+                        <div className="">
                             {project.skill && project.skill.length > 0 ? (
                                 project.skill.map((skill, index) => (
-                                    <li key={index}>{skill.title}</li>
+                                    <p className="list-none" key={index}>
+                                        {skill.title}
+                                    </p>
                                 ))
                             ) : (
                                 <p>No skills listed for this project</p>
                             )}
-                        </ul>
+                        </div>
                     </div>
                 </div>
                 <div className="sm:w-1/3">

@@ -21,7 +21,7 @@ export default function CardLinks() {
                     {/* Dark overlay */}
                     <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
                     <div className="absolute inset-0 top-1/2 text-center text-white text-lg font-bold z-20">
-                        <ButtonLink href="/about" />
+                        <ButtonLink href="/projecst">View projects</ButtonLink>
                     </div>
                 </div>
             </Link>
@@ -41,7 +41,7 @@ export default function CardLinks() {
                     {/* Dark overlay */}
                     <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
                     <div className="absolute inset-0 top-1/2 text-center text-white text-lg font-bold z-20">
-                        <ButtonLink href="/about" />
+                        <ButtonLink href="/about">About Me</ButtonLink>
                     </div>
                 </div>
             </Link>

@@ -44,9 +44,19 @@ export default function About() {
                 <div className="w-96 h-96 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 blur-3xl rounded-full opacity-50 lg:bottom-0 lg:right-0 lg:translate-x-[190%] lg:translate-y-[100%] sm:top-1/2 sm:right-0 sm:translate-x-[100%] sm:translate-y-[-50%]"></div>
             </div>
 
-            <h1 className="text-purple-500 font-bold mt-6 mb-6">
-                Stijn Walravens
-            </h1>
+            <div className="flex justify-between items-center">
+                <h1 className="text-purple-500 font-bold mt-6 mb-6">
+                    Stijn Walravens
+                </h1>
+                <img
+                    src="/img/mylogo.svg"
+                    alt="Stijn Walravens"
+                    className="w-40 h-40 rounded-full"
+                />
+            </div>
+            <h2 className="text-xl mb-1">
+                Full Stack Developer & Graphic Designer
+            </h2>
             <p>
                 I'm a Belgian / Native American full stack developer and graphic
                 designer with a knack for creating digital art. By day, I'm deep

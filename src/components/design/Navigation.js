@@ -1,54 +1,63 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
+import Logo from "@design/logo/Logo";
 
 export default function Navigation() {
-    // State to handle the visibility of the modal
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // Toggle the modal visibility
     const toggleModal = () => setIsModalOpen(!isModalOpen);
 
     return (
         <nav className="w-full shadow" role="navigation">
             <div className="flex justify-between items-center h-16 relative shadow-sm font-mono w-[95%] m-auto">
-                <a href="/">
-                    <img
-                        src="/img/mylogo.png"
-                        alt="profile"
-                        className="invert"
-                    />
-                </a>
+                <NavLink to="/">
+                    <Logo />
+                </NavLink>
                 {/* Desktop Menu */}
                 <ul className="hidden md:flex items-center gap-10">
                     <li>
-                        <a
-                            href="/"
-                            className="text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "text-lg font-bold text-purple-500 transition-colors duration-300 ease-in-out"
+                                    : "text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                            }
                         >
                             HOME
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a
-                            href="/projects"
-                            className="text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                        <NavLink
+                            to="/projects"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "text-lg font-bold text-purple-500 transition-colors duration-300 ease-in-out"
+                                    : "text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                            }
                         >
                             CASES
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a
-                            href="/about"
-                            className="text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                        <NavLink
+                            to="/about"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "text-lg font-bold text-purple-500 transition-colors duration-300 ease-in-out"
+                                    : "text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                            }
                         >
                             ABOUT
-                        </a>
+                        </NavLink>
                     </li>
                 </ul>
 
-                {/* Hamburger Icon for Mobile and Tablet */}
+                {/* Hamburger Icon for Mobile */}
                 <div className="md:hidden flex items-center">
                     <button onClick={toggleModal}>
+                        {/* Hamburger Icon Logic */}
                         <motion.svg
                             className="w-6 h-6"
                             fill="none"
@@ -69,30 +78,11 @@ export default function Navigation() {
                                 d="M4 6h16M4 12h16M4 18h16"
                             ></path>
                         </motion.svg>
-                        <motion.svg
-                            className="w-6 h-6 absolute"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                            initial={{ opacity: 0 }}
-                            animate={{
-                                opacity: isModalOpen ? 1 : 0,
-                            }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M6 18L18 6M6 6l12 12"
-                            ></path>
-                        </motion.svg>
                     </button>
                 </div>
             </div>
 
-            {/* Modal for Mobile/Tablet Navigation */}
+            {/* Modal for Mobile Navigation */}
             {isModalOpen && (
                 <motion.div
                     className="fixed inset-0 bg-black z-20"
@@ -127,31 +117,43 @@ export default function Navigation() {
                             transition={{ duration: 0.3, delay: 0.3 }}
                         >
                             <li>
-                                <a
-                                    href="/"
-                                    className="font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                                <NavLink
+                                    to="/"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "font-bold text-purple-500 transition-colors duration-300 ease-in-out"
+                                            : "font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                                    }
                                     onClick={toggleModal}
                                 >
                                     HOME
-                                </a>
+                                </NavLink>
                             </li>
                             <li>
-                                <a
-                                    href="/projects"
-                                    className="font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                                <NavLink
+                                    to="/projects"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "font-bold text-purple-500 transition-colors duration-300 ease-in-out"
+                                            : "font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                                    }
                                     onClick={toggleModal}
                                 >
                                     CASES
-                                </a>
+                                </NavLink>
                             </li>
                             <li>
-                                <a
-                                    href="/about"
-                                    className="font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                                <NavLink
+                                    to="/about"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "font-bold text-purple-500 transition-colors duration-300 ease-in-out"
+                                            : "font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                                    }
                                     onClick={toggleModal}
                                 >
                                     ABOUT
-                                </a>
+                                </NavLink>
                             </li>
                         </motion.ul>
                     </div>

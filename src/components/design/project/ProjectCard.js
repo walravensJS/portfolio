@@ -48,7 +48,7 @@ export default function ProjectCard({ project, isLoading }) {
                         <div className=" flex gap-1">
                             {project.skill.map((skill) => (
                                 <p
-                                    className="p-1 bg-slate-400 rounded font-bold text-xs mt-1 text-zinc-600"
+                                    className="p-1 bg-gray-300 rounded font-bold text-xs mt-1 text-zinc-600"
                                     key={skill.id}
                                 >
                                     {skill.title}

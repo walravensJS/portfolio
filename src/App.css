@@ -3,37 +3,34 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'MyFont';
-    src: url('assets/fonts/HalenoirCompact-Regular.otf');
+    font-family: "MyFont";
+    src: url("assets/fonts/HalenoirCompact-Regular.otf");
     font-weight: normal;
     font-style: normal;
 }
 
-@font-face{
-    font-family: 'title';
-    src: url('assets/fonts/HalenoirExpanded-Bold.otf');
-
+@font-face {
+    font-family: "title";
+    src: url("assets/fonts/HalenoirExpanded-Bold.otf");
 }
 
 body {
-    font-family: 'MyFont', monospace;
+    font-family: "MyFont", monospace;
 }
 
 nav {
-    font-family: 'MyFont';
+    font-family: "MyFont";
     font-size: 1.5rem;
 }
 
 h1 {
-    font-family: 'title';
+    font-family: "title";
     font-size: 5rem;
     text-transform: uppercase;
-
 }
 
-
 p {
-    font-family: 'MyFont', monospace;
+    font-family: "MyFont", monospace;
     font-size: 1rem;
 }
 
@@ -47,79 +44,98 @@ p {
     -moz-box-shadow: 0px 0px 1rem 0px rgba(0, 255, 0, 1);
     box-shadow: 0px 0px 1rem 0px rgba(0, 255, 0, 1);
     animation: pulse 2s infinite;
-    }
-    
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-            box-shadow: 0px 0px 1rem 0px rgba(0, 255, 0, 1);
-        }
-        50% {
-            transform: scale(1.2);
-            box-shadow: 0px 0px 1.5rem 0px rgba(0, 255, 0, 0.75);
-        }
-        100% {
-            transform: scale(1);
-            box-shadow: 0px 0px 1rem 0px rgba(0, 255, 0, 1);
-        }
-    }
+}
 
-    .card3d {
-        margin: 4px;
+@keyframes pulse {
+    0% {
         transform: scale(1);
-        perspective: 600px;
+        box-shadow: 0px 0px 1rem 0px rgba(0, 255, 0, 1);
     }
-    
-    .card3d:hover {
-        z-index: 10;
-        transform: scale(1.1);
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0px 0px 1.5rem 0px rgba(0, 255, 0, 0.75);
     }
-    
-    .card3d,
-    .card3d img {
-        transition: all 250ms ease-out;
+    100% {
+        transform: scale(1);
+        box-shadow: 0px 0px 1rem 0px rgba(0, 255, 0, 1);
     }
+}
 
+.card3d {
+    margin: 4px;
+    transform: scale(1);
+    perspective: 600px;
+}
 
-    .occupation-container {
-        height: 2rem;
-        overflow: hidden;
+.card3d:hover {
+    z-index: 10;
+    transform: scale(1.1);
+}
+
+.card3d,
+.card3d img {
+    transition: all 250ms ease-out;
+}
+
+.occupation-container {
+    height: 2rem;
+    overflow: hidden;
+}
+
+.occupation {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    animation: slide 9s infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(0);
     }
-    
-    .occupation {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        animation: slide 9s infinite;
+    20% {
+        transform: translateY(0);
     }
-    
-    @keyframes slide {
-        0% {
-            transform: translateY(0);
-        }
-        20% {
-            transform: translateY(0);
-        }
-        30% {
-            transform: translateY(-2rem);
-        }
-        50% {
-            transform: translateY(-2rem);
-        }
-        60% {
-            transform: translateY(-4rem);
-        }
-        80% {
-            transform: translateY(-4rem);
-        }
-        100% {
-            transform: translateY(0);
-        }
+    30% {
+        transform: translateY(-2rem);
     }
-    
-    .occupation-item {
-        font-size: 1.25rem;
-        height: 2rem;
-        line-height: 2rem;
-        font-family: 'MyFont', monospace    }
-    
+    50% {
+        transform: translateY(-2rem);
+    }
+    60% {
+        transform: translateY(-4rem);
+    }
+    80% {
+        transform: translateY(-4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.occupation-item {
+    font-size: 1.25rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-family: "MyFont", monospace;
+}
+
+.animated-path {
+    width: 100%;
+    height: auto;
+    stroke: #6c63ff; /* Add your desired stroke color */
+    stroke-width: 2;
+    fill: none; /* Remove fill for the animation effect */
+}
+
+.animated-path path {
+    stroke-dasharray: 3000; /* Length of the path */
+    stroke-dashoffset: 3000; /* Start with the path completely hidden */
+    animation: draw 3s linear forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0; /* Reveal the entire path */
+    }
+}

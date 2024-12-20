@@ -100,7 +100,7 @@ export default function ProjectList() {
 
     return (
         <div className="container mx-auto w-[95%]">
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex justify-between items-center gap-4 mb-6">
                 {/* Search Input and Button */}
                 <div className="flex gap-2">
                     <input

@@ -7,13 +7,13 @@ export const ROUTES = {
         path: "/about",
         title: "About",
     },
-    contact: {
-        path: "/contact",
-        title: "Contact",
-    },
     project: {
         path: "/projects",
         title: "Projects",
+    },
+    contact: {
+        path: "/contact",
+        title: "Contact",
     },
     detail: {
         path: "/projects/:slug",

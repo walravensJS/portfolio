@@ -3,30 +3,20 @@ import { gql } from "@apollo/client";
 export const GET_PROJECT = gql`
     query Projects($slug: String!) {
         projects(where: { slug: $slug }) {
-            description
             id
             title
-            githubUrl
-            site
+            shortDescription
+            longDescription
             slug
-            fullImage {
-                url
-                fileName
+            skill {
+                id
+                title
             }
-            thumbImage {
-                url
-                fileName
+            image {
+                id
             }
-            css
-            adobe
-            html
-            illustrator
-            javascript
-            video {
-                url
-            }
-            photoshop
-            gsap
+            github
+            site
         }
     }
 `;

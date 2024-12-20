@@ -1,99 +1,69 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Circlebutton from "../components/Circlebutton";
-import Skills from "../components/Skills";
-
-gsap.registerPlugin(ScrollTrigger);
+import React, { useState, useEffect } from "react";
+import Header from "../components/design/home/Header";
+import MyCard from "../components/design/home/MyCard";
+import FetchFeaturedPost from "../components/functional/Home/FetchFeaturedPost";
+import Tools from "../components/design/home/Tools";
+import { motion } from "framer-motion";
+import CardLinks from "../components/design/home/CardLinks";
+import AnimatedLogo from "../components/design/Loading/AnimatedLogo";
 
 export default function Home() {
-    const headerRef = useRef(null);
-    const aboutRef = useRef(null);
-    const skillsRef = useRef(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // Fade in header and skills on initial load
-        gsap.from(headerRef.current, { opacity: 0, y: 50, duration: 1 });
-        gsap.from(skillsRef.current, {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            delay: 0.5,
-        });
+        // Simulate loading time (replace this with actual data fetching logic if needed)
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 2000); // 2 seconds delay for demonstration
 
-        // Fade in about section on scroll
-        gsap.fromTo(
-            aboutRef.current,
-            { opacity: 0, y: 50 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: aboutRef.current,
-                    start: "top 80%",
-                    end: "top 60%",
-                    scrub: true,
-                    toggleActions: "play none none none",
-                },
-            }
-        );
+        return () => clearTimeout(timer);
     }, []);
 
+    if (isLoading) {
+        // Loading animation
+        return (
+            <div className="flex justify-center items-center h-screen w-screen">
+                <div className="w-40 h-40">
+                    <AnimatedLogo className="w-full" />;
+                </div>
+            </div>
+        );
+    }
+
     return (
-        <div className="main-container">
-            <div className="home-header" ref={headerRef}>
-                <div className="header-intro">
-                    <div className="looking">
-                        <div className="red-circle"></div>
-                        <p>Looking for work</p>
-                    </div>
-                    <h1 className="name">
-                        Stijn <br></br> Walravens
-                    </h1>
-                    <div className="occupation-container">
-                        <ul className="occupation">
-                            <li className="occupation-item">
-                                Full stack Developer
-                            </li>
-                            <li className="occupation-item">
-                                Graphic Designer
-                            </li>
-                            <li className="occupation-item">Web Designer</li>
-                        </ul>
-                    </div>
-                    <p className="description">
-                        22 year old, Belgian/Native American fullstack
-                        developer.
-                    </p>
-                </div>
-                <div className="header-pics">
-                    <img
-                        src="img/memoji.png"
-                        alt="MeMoji"
-                        className="overlap-img"
-                    />
+        <div>
+            <div className="w-[95%] mx-auto">
+                {/* Responsive layout: Reverse order for mobile */}
+                <div className="flex flex-col-reverse lg:flex-row justify-center items-center h-[85vh] gap-10">
+                    {/* Animated Header */}
+                    <motion.div
+                        className="lg:mr-10"
+                        initial={{ opacity: 0, y: -50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                        <Header />
+                    </motion.div>
+
+                    {/* Animated Card */}
+                    <motion.div
+                        className="flex justify-center items-center"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{
+                            duration: 0.8,
+                            delay: 0.5,
+                            type: "spring",
+                            stiffness: 100,
+                        }}
+                    >
+                        <MyCard />
+                    </motion.div>
                 </div>
             </div>
-            <Circlebutton />
-            <div className="about-home" id="about" ref={aboutRef}>
-                <p className="wave">Hello there! 👋</p>
-                <p>
-                    I'm a full stack developer and graphic designer with a knack
-                    for weaving digital magic. By day, I'm deep into the world
-                    of web development, using tools like Express, Eleventy, and
-                    React.js to create seamless online experiences. But when the
-                    workday's done, you'll find me freelancing as a graphic
-                    designer, bringing local clients' dreams to life, especially
-                    for weddings and events. Outside of work, I'm all about
-                    gaming, movie marathons, and getting lost in a good book.
-                    And when it comes to design tools, Adobe is my playground.
-                    Let's team up and make some digital dreams a reality!
-                </p>
-            </div>
-            <div className="skills" ref={skillsRef}>
-                <Skills />
-            </div>
+            <FetchFeaturedPost />
+            <Tools />
+            <CardLinks />
         </div>
     );
 }

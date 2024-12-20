@@ -56,7 +56,7 @@ export default function MyCard() {
     }, []);
 
     return (
-        <div className="flex justify-center w-[40%] m-auto mt-20 sm:mt-0">
+        <div className="flex justify-center w-[40%] m-auto mt-40 sm:mt-0">
             <a href="/about" className="">
                 <div
                     ref={cardRef}

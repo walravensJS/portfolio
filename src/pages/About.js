@@ -44,8 +44,8 @@ export default function About() {
                 <div className="w-96 h-96 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 blur-3xl rounded-full opacity-50 lg:bottom-0 lg:right-0 lg:translate-x-[190%] lg:translate-y-[100%] sm:top-1/2 sm:right-0 sm:translate-x-[100%] sm:translate-y-[-50%]"></div>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-between items-center">
-                <div className="text-center md:text-left">
+            <div className="flex justify-between ">
+                <div className="md:text-left">
                     <h1 className="text-purple-500 font-bold mt-6 mb-6 text-3xl md:text-4xl">
                         Stijn Walravens
                     </h1>

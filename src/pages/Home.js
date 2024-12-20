@@ -20,7 +20,6 @@ export default function Home() {
     }, []);
 
     if (isLoading) {
-        // Loading animation
         return (
             <div className="flex justify-center items-center h-screen w-screen">
                 <div className="w-40 h-40">
@@ -57,7 +56,7 @@ export default function Home() {
                             stiffness: 100,
                         }}
                     >
-                        <MyCard />
+                        <MyCard className="mt-4 sm:mt-0" />
                     </motion.div>
                 </div>
             </div>

@@ -9,6 +9,7 @@ import { ROUTES } from "../routes/routes";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { GoLinkExternal } from "react-icons/go";
+import AnimatedLogo from "./../components/design/Loading/AnimatedLogo";
 
 export default function Detail() {
     const { slug } = useParams();
@@ -30,7 +31,14 @@ export default function Detail() {
 
     console.log("data", data);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading)
+        return (
+            <div className="flex justify-center items-center h-screen w-screen">
+                <div className="w-40 h-40">
+                    <AnimatedLogo className="w-full" />;
+                </div>
+            </div>
+        );
     if (error)
         return (
             <p>

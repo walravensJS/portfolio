@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "@design/home/Header";
 import MyCard from "@design/home/MyCard";
 import FetchFeaturedPost from "@functional/Home/FetchFeaturedPost";
 import Tools from "@design/home/Tools";
 import { motion } from "framer-motion";
 import CardLinks from "@design/home/CardLinks";
+import AnimatedLogo from "@design/Loading/AnimatedLogo";
 
 export default function Home() {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        // Simulate loading time (replace this with actual data fetching logic if needed)
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 2000); // 2 seconds delay for demonstration
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (isLoading) {
+        // Loading animation
+        return (
+            <div className="flex justify-center items-center h-screen w-screen">
+                <div className="w-40 h-40">
+                    <AnimatedLogo className="w-full" />;
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div>
             <div className="w-[95%] mx-auto">

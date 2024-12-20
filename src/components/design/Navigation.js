@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-import Logo from "@design/logo/Logo";
+import Logo from "./../design/logo/Logo";
 
 export default function Navigation() {
     const [isModalOpen, setIsModalOpen] = useState(false);

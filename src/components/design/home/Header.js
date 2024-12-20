@@ -1,11 +1,7 @@
 import React from "react";
 import Occupation from "./Occupation";
-import GithubWidget from "./GitHubContributions";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { MdClass } from "react-icons/md";
-
-const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
-const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
 
 export default function Header() {
     return (
@@ -36,12 +32,7 @@ export default function Header() {
                 </div>
             </div>
 
-            {/* Right Section */}
             <div className="flex flex-col lg:flex-row lg:w-full gap-8">
-                {/* GitHub Widget */}
-                <GithubWidget username={username} token={token} />
-
-                {/* Current Project */}
                 <div className="flex items-center gap-4">
                     <MdClass className="text-purple-500 text-3xl" />
                     <div>

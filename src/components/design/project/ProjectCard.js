@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Skeleton from "react-loading-skeleton"; // Import the skeleton loader
-import { ROUTES } from "@routes/routes";
+import { ROUTES } from "./../../../routes/routes";
 
 export default function ProjectCard({ project, isLoading }) {
     return (

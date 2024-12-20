@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import { GET_PROJECTS, GET_IMAGES } from "@graphql/queries";
-import FeaturedPost from "@design/home/FeaturedPost";
+import { GET_PROJECTS, GET_IMAGES } from "../../../graphql/queries";
+import FeaturedPost from "../../design/home/FeaturedPost";
 
 export default function FetchFeaturedPost() {
     const {

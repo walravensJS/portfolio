@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Header from "@design/home/Header";
-import MyCard from "@design/home/MyCard";
-import FetchFeaturedPost from "@functional/Home/FetchFeaturedPost";
-import Tools from "@design/home/Tools";
+import Header from "../components/design/home/Header";
+import MyCard from "../components/design/home/MyCard";
+import FetchFeaturedPost from "../components/functional/Home/FetchFeaturedPost";
+import Tools from "../components/design/home/Tools";
 import { motion } from "framer-motion";
-import CardLinks from "@design/home/CardLinks";
-import AnimatedLogo from "@design/Loading/AnimatedLogo";
+import CardLinks from "../components/design/home/CardLinks";
+import AnimatedLogo from "../components/design/Loading/AnimatedLogo";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);

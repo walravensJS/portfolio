@@ -171,6 +171,8 @@ export default function Contact() {
                                 className="p-3 rounded-full bg-gray-200 hover:bg-gray-300"
                                 whileHover={{ scale: 1.2, rotate: 10 }}
                                 whileTap={{ scale: 0.9 }}
+                                target="_blank" // Add target="_blank"
+                                rel="noreferrer"
                             >
                                 <Icon size={24} />
                             </motion.a>

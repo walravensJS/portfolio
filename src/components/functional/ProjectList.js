@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import { GET_PROJECTS, GET_IMAGES, GET_SKILLS } from "@graphql/queries";
-import ProjectCard from "@design/project/ProjectCard";
+import { GET_PROJECTS, GET_IMAGES, GET_SKILLS } from "./../../graphql/queries";
+import ProjectCard from "./../design/project/ProjectCard";
 import Skeleton from "react-loading-skeleton";
 
 export default function ProjectList() {

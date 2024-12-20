@@ -33,6 +33,8 @@ export default function Footer() {
                                 key={index}
                                 href={href}
                                 className="p-3"
+                                target="_blank" // Add target="_blank"
+                                rel="noreferrer" // Add rel="noreferrer"
                                 whileHover={{ scale: 1.2, rotate: 10 }}
                                 whileTap={{ scale: 0.9 }}
                             >
@@ -44,7 +46,11 @@ export default function Footer() {
                 <div className="">
                     <p className="font-bold text-black">Stijn Walravens</p>
                     <p className="mt-2">
-                        <a href="mailto:stijn.walravens@outlook.com">
+                        <a
+                            href="mailto:stijn.walravens@outlook.com"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             stijn.walravens@outlook.com
                         </a>
                     </p>

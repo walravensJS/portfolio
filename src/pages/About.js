@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { GET_SKILLS, GET_EDUCATION, GET_PROJECTS } from "@graphql/queries"; // Adjust the import path as needed
+import { GET_SKILLS, GET_EDUCATION, GET_PROJECTS } from "./../graphql/queries"; // Adjust the import path as needed
 
 export default function About() {
     const {

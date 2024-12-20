@@ -36,8 +36,10 @@ export default function Header() {
                 <div className="flex items-center gap-4">
                     <MdClass className="text-purple-500 text-3xl" />
                     <div>
-                        <h2 className="font-bold text-lg">Current Project</h2>
-                        <p className="text-sm md:text-base">Logo design</p>
+                        <h2 className="font-bold text-lg">Current Projects</h2>
+                        <p className="text-sm md:text-base">
+                            Logo design, Mobile application + Laravel project
+                        </p>
                     </div>
                 </div>
             </div>

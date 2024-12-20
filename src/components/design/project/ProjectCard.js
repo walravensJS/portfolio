@@ -15,7 +15,6 @@ export default function ProjectCard({ project, isLoading }) {
                 transition={{ type: "spring", stiffness: 200, damping: 10 }}
                 className="rounded-lg shadow-lg overflow-hidden"
             >
-                {/* Project Image */}
                 {isLoading || !project.imageUrl ? (
                     <Skeleton height={320} width="100%" />
                 ) : (
@@ -43,40 +42,23 @@ export default function ProjectCard({ project, isLoading }) {
                         </p>
                     )}
 
-                    {/* Skills List */}
                     {isLoading ? (
                         <Skeleton height={18} width="40%" />
+                    ) : project.skill && project.skill.length > 0 ? (
+                        <div className=" flex gap-1">
+                            {project.skill.map((skill) => (
+                                <p
+                                    className="p-1 bg-slate-400 rounded font-bold text-xs mt-1 text-zinc-600"
+                                    key={skill.id}
+                                >
+                                    {skill.title}
+                                </p>
+                            ))}
+                        </div>
                     ) : (
-                        project.skills &&
-                        project.skills.length > 0 && (
-                            <div className="mt-2">
-                                <h3 className="text-sm font-semibold text-gray-300">
-                                    Skills:
-                                </h3>
-                                <div className="skills mt-6">
-                                    <h2 className="text-xl font-semibold">
-                                        Skills
-                                    </h2>
-                                    <ul className="list-disc pl-6">
-                                        {project.skill &&
-                                        project.skill.length > 0 ? (
-                                            project.skill.map(
-                                                (skill, index) => (
-                                                    <li key={index}>
-                                                        {skill.title}
-                                                    </li>
-                                                )
-                                            )
-                                        ) : (
-                                            <p>
-                                                No skills listed for this
-                                                project
-                                            </p>
-                                        )}
-                                    </ul>
-                                </div>
-                            </div>
-                        )
+                        <p className="text-gray-400">
+                            No skills listed for this project
+                        </p>
                     )}
                 </div>
             </motion.div>

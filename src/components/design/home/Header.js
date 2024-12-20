@@ -35,7 +35,7 @@ export default function Header() {
             <div className="flex flex-col lg:flex-row lg:w-full gap-8">
                 <div className="flex items-center gap-4">
                     <MdClass className="text-purple-500 text-3xl" />
-                    <div>
+                    <div className="h-40">
                         <h2 className="font-bold text-lg">Current Projects</h2>
                         <p className="text-sm md:text-base">
                             Logo design, Mobile application + Laravel project

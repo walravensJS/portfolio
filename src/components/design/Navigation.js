@@ -37,7 +37,7 @@ export default function Navigation() {
                                     : "text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
                             }
                         >
-                            CASES
+                            PROJECTS
                         </NavLink>
                     </li>
                     <li>

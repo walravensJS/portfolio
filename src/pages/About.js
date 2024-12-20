@@ -44,20 +44,23 @@ export default function About() {
                 <div className="w-96 h-96 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 blur-3xl rounded-full opacity-50 lg:bottom-0 lg:right-0 lg:translate-x-[190%] lg:translate-y-[100%] sm:top-1/2 sm:right-0 sm:translate-x-[100%] sm:translate-y-[-50%]"></div>
             </div>
 
-            <div className="flex justify-between items-center">
-                <h1 className="text-purple-500 font-bold mt-6 mb-6">
-                    Stijn Walravens
-                </h1>
+            <div className="flex flex-col md:flex-row justify-between items-center">
+                <div className="text-center md:text-left">
+                    <h1 className="text-purple-500 font-bold mt-6 mb-6 text-3xl md:text-4xl">
+                        Stijn Walravens
+                    </h1>
+                    <h2 className="text-lg md:text-xl mb-1">
+                        Full Stack Developer & Graphic Designer
+                    </h2>
+                </div>
                 <img
                     src="/img/mylogo.svg"
                     alt="Stijn Walravens"
-                    className="w-40 h-40 rounded-full"
+                    className="w-32 h-32 md:w-40 md:h-40 rounded-full"
                 />
             </div>
-            <h2 className="text-xl mb-1">
-                Full Stack Developer & Graphic Designer
-            </h2>
-            <p>
+
+            <p className="mt-4 text-gray-700 text-sm md:text-base">
                 I'm a Belgian / Native American full stack developer and graphic
                 designer with a knack for creating digital art. By day, I'm deep
                 into the world of web development, using tools like Express,
@@ -71,33 +74,31 @@ export default function About() {
             </p>
 
             <h2 className="text-lg font-bold text-gray-700 mt-8">Skills</h2>
-            <ul className="list-disc list-inside mt-4 space-y-1">
+            <div className="list-disc list-inside mt-4 space-y-1">
                 {skillsData.skills.map((skill) => (
-                    <li key={skill.id} className="text-gray-600 list-none">
+                    <p key={skill.id} className="text-gray-600">
                         {skill.title}
-                    </li>
+                    </p>
                 ))}
-            </ul>
+            </div>
 
-            <div className="flex justify-between items-end">
-                <div>
-                    <h2 className="text-lg font-bold text-gray-700 mt-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mt-8">
+                <div className="w-divll md:w-1/2">
+                    <h2 className="text-lg font-bold text-gray-700">
                         Diplomas
                     </h2>
-                    <ul className="list-disc list-inside mt-4 space-y-1">
+
+                    <div className="list-disc list-inside mt-4 space-y-1">
                         {educationData.educations.map((education) => (
-                            <li
-                                key={education.id}
-                                className="text-gray-600 list-none"
-                            >
+                            <p key={education.id} className="text-gray-600">
                                 {education.title} - {education.course} (
                                 {education.period})
-                            </li>
+                            </p>
                         ))}
-                    </ul>
+                    </div>
                 </div>
 
-                <h2 className="text-4xl font-bold text-gray-700 mt-8">
+                <h2 className="text-2xl md:text-4xl font-bold text-gray-700 mt-8 md:mt-0">
                     {projectsData.projects.length} projects completed
                 </h2>
             </div>

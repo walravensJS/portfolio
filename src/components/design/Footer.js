@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
     return (
-        <footer className="border-t-1  mt-10 pb-10 text-zinc-400 ">
-            <div className="flex justify-between w-[95%] m-auto">
-                <div>
-                    <ul className="flex justify-between gap-5">
+        <footer className="border-t-1 mt-10 pb-10 text-zinc-400">
+            <div className="flex flex-col md:flex-row justify-between w-[95%] m-auto">
+                <div className="mb-6 md:mb-0">
+                    <ul className="flex flex-col md:flex-row justify-center md:justify-start gap-5">
                         <li className="text-center">
-                            <a href="/'">Home</a>
+                            <a href="/">Home</a>
                         </li>
                         <li className="text-center">
                             <a href="/projects">Projects</a>
@@ -33,8 +33,8 @@ export default function Footer() {
                                 key={index}
                                 href={href}
                                 className="p-3"
-                                target="_blank" // Add target="_blank"
-                                rel="noreferrer" // Add rel="noreferrer"
+                                target="_blank"
+                                rel="noreferrer"
                                 whileHover={{ scale: 1.2, rotate: 10 }}
                                 whileTap={{ scale: 0.9 }}
                             >
@@ -43,7 +43,7 @@ export default function Footer() {
                         ))}
                     </div>
                 </div>
-                <div className="">
+                <div className="text-center md:text-left">
                     <p className="font-bold text-black">Stijn Walravens</p>
                     <p className="mt-2">
                         <a

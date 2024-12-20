@@ -32,8 +32,8 @@ export default function Header() {
                 </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row lg:w-full gap-8">
-                <div className="flex items-center gap-4 h-40">
+            <div className="flex flex-col mb:mb-20 lg:flex-row lg:mb-0 lg:w-full gap-8">
+                <div className="flex items-center gap-4">
                     <MdClass className="text-purple-500 text-3xl" />
                     <div className="">
                         <h2 className="font-bold text-lg">Current Projects</h2>

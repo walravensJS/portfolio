@@ -7,7 +7,7 @@ export default function FeaturedPost({ project }) {
         <Link
             to={`${ROUTES.project.path}/${project.slug}`}
             key={`project-${project.slug}`}
-            className="w-full"
+            className="w-full mt-20"
         >
             <div className="w-full relative">
                 {/* Project Image */}

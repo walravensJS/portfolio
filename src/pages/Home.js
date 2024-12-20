@@ -46,7 +46,7 @@ export default function Home() {
 
                     {/* Animated Card with no animation on mobile */}
                     <motion.div
-                        className="flex justify-center items-center"
+                        className="flex justify-center items-center lg:animate-none"
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{
@@ -58,7 +58,6 @@ export default function Home() {
                         // Apply animation only on larger screens
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="lg:animate-none"
                     >
                         <MyCard className="mt-4 sm:mt-0" />
                     </motion.div>

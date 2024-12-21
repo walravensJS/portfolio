@@ -42,6 +42,39 @@ export default function Tools() {
                             className="w-16 h-16"
                         />
                     </motion.div>
+                    <motion.div
+                        className="flex justify-center lg:w-1/3 items-center p-5 bg-gray-100 rounded-lg hover:bg-purple-500"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <img
+                            src="/img/tools/photoshop.png"
+                            alt="Macbook"
+                            className="w-16 h-16"
+                        />
+                    </motion.div>
+                    <motion.div
+                        className="flex justify-center lg:w-1/3  items-center p-5 bg-gray-100 rounded-lg hover:bg-purple-500"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <img
+                            src="/img/tools/illustrator.png"
+                            alt="Mouse"
+                            className="h-16"
+                        />
+                    </motion.div>
+                    <motion.div
+                        className="flex justify-center lg:w-1/3  items-center p-5 bg-gray-100 rounded-lg hover:bg-purple-500"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <img
+                            src="/img/tools/procreate.png"
+                            alt="VSCode"
+                            className="w-16 h-16"
+                        />
+                    </motion.div>
                 </div>
             </div>
         </div>

@@ -83,7 +83,7 @@ export default function Contact() {
                             htmlFor="name"
                             className="block text-lg font-semibold text-gray-700"
                         >
-                            Fullname
+                            Full name
                         </label>
                         <input
                             id="name"

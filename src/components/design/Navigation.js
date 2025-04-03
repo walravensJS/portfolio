@@ -139,7 +139,7 @@ export default function Navigation() {
                                     }
                                     onClick={toggleModal}
                                 >
-                                    CASES
+                                    PROJECTS
                                 </NavLink>
                             </li>
                             <li>

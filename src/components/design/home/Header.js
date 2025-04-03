@@ -38,7 +38,7 @@ export default function Header() {
                     <div className="">
                         <h2 className="font-bold text-lg">Current Projects</h2>
                         <p className="text-sm md:text-base">
-                            Laravel / NextJS Casino management system
+                            Travel app (SwiftUI)
                         </p>
                     </div>
                 </div>

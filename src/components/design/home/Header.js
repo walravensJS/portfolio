@@ -17,7 +17,7 @@ export default function Header() {
                 </div>
                 <Occupation />
                 <p className="text-sm md:text-base lg:text-lg mt-4 mb-4">
-                    22-year-old Belgian/Native American full-stack developer and
+                    23-year-old Belgian/Native American full-stack developer and
                     Designer.
                 </p>
                 <div className="flex gap-3 items-center text-purple-500 font-bold hover:cursor-pointer">

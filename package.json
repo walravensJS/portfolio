@@ -22,11 +22,11 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject"
-},
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
     "eslintConfig": {
         "extends": [
             "react-app",
@@ -47,6 +47,7 @@
     },
     "devDependencies": {
         "@craco/craco": "^7.1.0",
+        "@tailwindcss/line-clamp": "^0.4.4",
         "tailwindcss": "^3.4.17"
     }
 }

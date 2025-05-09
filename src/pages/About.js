@@ -1,8 +1,13 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { GET_SKILLS, GET_EDUCATION, GET_PROJECTS } from "./../graphql/queries"; // Adjust the import path as needed
+import { GET_SKILLS, GET_EDUCATION, GET_PROJECTS } from "./../graphql/queries";
+import { useState } from "react";
+import ResumeModal from "../components/functional/About/Resume"; // adjust path as needed
+
 
 export default function About() {
+    const [isResumeOpen, setResumeOpen] = useState(false);
+
     const {
         loading: skillsLoading,
         error: skillsError,
@@ -73,6 +78,13 @@ export default function About() {
                 team up and make some digital dreams a reality!
             </p>
 
+            <button
+                onClick={() => setResumeOpen(true)}
+                className="mt-4 bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600"
+            >
+                View Resume
+            </button>
+
             <h2 className="text-lg font-bold text-gray-700 mt-8">Skills</h2>
             <div className="list-disc list-inside mt-4 space-y-1">
                 {skillsData.skills.map((skill) => (
@@ -102,6 +114,8 @@ export default function About() {
                     {projectsData.projects.length} projects completed
                 </h2>
             </div>
+            <ResumeModal isOpen={isResumeOpen} onClose={() => setResumeOpen(false)} />
         </div>
+        
     );
 }

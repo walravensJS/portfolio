@@ -53,7 +53,7 @@ export default function Contact() {
                 <h1>Thank you for contacting me</h1>
                 <p>I will get back to you as soon as possible.</p>
                 <p>
-                    <a href="/">Go back</a>
+                    <a href="/">Go back by clicking here!</a>
                 </p>
             </motion.div>
         );

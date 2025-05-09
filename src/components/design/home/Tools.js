@@ -1,82 +1,40 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+const tools = [
+  { name: "Macbook", imgSrc: "/img/tools/macbook.png" },
+  { name: "Mouse", imgSrc: "/img/tools/mouse.png" },
+  { name: "VSCode", imgSrc: "/img/tools/vscode.png" },
+  { name: "Photoshop", imgSrc: "/img/tools/photoshop.png" },
+  { name: "Illustrator", imgSrc: "/img/tools/illustrator.png" },
+  { name: "Procreate", imgSrc: "/img/tools/procreate.png" }
+];
+
 export default function Tools() {
-    return (
-        <div className="flex flex-col md:flex-row w-[95%] lg:h-52 md:h-screen mx-auto gap-5 mt-5">
-            <div className="md:w-1/2 lg:w-full">
-                <h1 className="text-3xl md:text-4xl font-bold text-left">
-                    Tools I Use
-                </h1>
-                <div className="mt-5 grid lg:flex w-full md:grid-cols-3 gap-5">
-                    <motion.div
-                        className="flex justify-center lg:w-1/3 items-center p-5 bg-gray-100 rounded-lg hover:bg-purple-500"
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        <img
-                            src="/img/tools/macbook.png"
-                            alt="Macbook"
-                            className="w-16 h-16"
-                        />
-                    </motion.div>
-                    <motion.div
-                        className="flex justify-center lg:w-1/3  items-center p-5 bg-gray-100 rounded-lg hover:bg-purple-500"
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        <img
-                            src="/img/tools/mouse.png"
-                            alt="Mouse"
-                            className="h-16"
-                        />
-                    </motion.div>
-                    <motion.div
-                        className="flex justify-center lg:w-1/3  items-center p-5 bg-gray-100 rounded-lg hover:bg-purple-500"
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        <img
-                            src="/img/tools/vscode.png"
-                            alt="VSCode"
-                            className="w-16 h-16"
-                        />
-                    </motion.div>
-                    <motion.div
-                        className="flex justify-center lg:w-1/3 items-center p-5 bg-gray-100 rounded-lg hover:bg-purple-500"
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        <img
-                            src="/img/tools/photoshop.png"
-                            alt="Macbook"
-                            className="w-16 h-16"
-                        />
-                    </motion.div>
-                    <motion.div
-                        className="flex justify-center lg:w-1/3  items-center p-5 bg-gray-100 rounded-lg hover:bg-purple-500"
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        <img
-                            src="/img/tools/illustrator.png"
-                            alt="Mouse"
-                            className="h-16"
-                        />
-                    </motion.div>
-                    <motion.div
-                        className="flex justify-center lg:w-1/3  items-center p-5 bg-gray-100 rounded-lg hover:bg-purple-500"
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        <img
-                            src="/img/tools/procreate.png"
-                            alt="VSCode"
-                            className="w-16 h-16"
-                        />
-                    </motion.div>
-                </div>
+  return (
+    <section className="py-10 px-4 max-w-7xl mx-auto">
+      <h1 className="text-3xl md:text-4xl font-bold mb-8">Tools I Use</h1>
+      
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        {tools.map((tool, index) => (
+          <motion.div
+            key={index}
+            className="bg-gray-100 rounded-lg p-6 flex items-center justify-center hover:bg-purple-500 hover:text-white transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <div className="flex flex-col items-center gap-3">
+              <img
+                src={tool.imgSrc}
+                alt={`${tool.name} icon`}
+                className="w-16 h-16 object-contain"
+              />
+              <span className="font-medium text-sm">{tool.name}</span>
             </div>
-        </div>
-    );
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
 }

@@ -9,7 +9,7 @@ export default function Navigation() {
     const toggleModal = () => setIsModalOpen(!isModalOpen);
 
     return (
-        <nav className="w-full shadow" role="navigation">
+        <nav className="w-full shadow sticky top-0 z-30 bg-white/70 backdrop-blur-lg rounded-xl" role="navigation">
             <div className="flex justify-between items-center h-16 relative shadow-sm font-mono w-[95%] m-auto">
                 <NavLink to="/">
                     <Logo />
@@ -21,11 +21,11 @@ export default function Navigation() {
                             to="/"
                             className={({ isActive }) =>
                                 isActive
-                                    ? "text-lg font-bold text-purple-500 transition-colors duration-300 ease-in-out"
-                                    : "text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                            ? "text-base font-bold bg-purple-500 px-4 py-2 rounded-full text-white transition-colors duration-300 ease-in-out"                                    
+                            : "text-base font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
                             }
                         >
-                            HOME
+                            Home
                         </NavLink>
                     </li>
                     <li>
@@ -33,11 +33,11 @@ export default function Navigation() {
                             to="/projects"
                             className={({ isActive }) =>
                                 isActive
-                                    ? "text-lg font-bold text-purple-500 transition-colors duration-300 ease-in-out"
-                                    : "text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                            ? "text-base font-bold bg-purple-500 px-4 py-2 rounded-full text-white transition-colors duration-300 ease-in-out"                                    
+                            : "text-base font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
                             }
                         >
-                            PROJECTS
+                            Projects
                         </NavLink>
                     </li>
                     <li>
@@ -45,11 +45,11 @@ export default function Navigation() {
                             to="/about"
                             className={({ isActive }) =>
                                 isActive
-                                    ? "text-lg font-bold text-purple-500 transition-colors duration-300 ease-in-out"
-                                    : "text-lg font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                                    ? "text-base font-bold bg-purple-500 px-4 py-2 rounded-full text-white transition-colors duration-300 ease-in-out "
+                                    : "text-base font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out "
                             }
                         >
-                            ABOUT
+                            About
                         </NavLink>
                     </li>
                 </ul>

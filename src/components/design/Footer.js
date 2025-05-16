@@ -56,6 +56,11 @@ export default function Footer() {
                     </p>
                 </div>
             </div>
+            <p className="w-[100%] text-center">
+                Built and designed by Stijn Walravens.
+                <br/>
+             All rights reserved. ©
+            </p>  
         </footer>
     );
 }

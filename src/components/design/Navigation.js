@@ -9,8 +9,8 @@ export default function Navigation() {
     const toggleModal = () => setIsModalOpen(!isModalOpen);
 
     return (
-        <nav className="w-full shadow sticky top-0 z-30 bg-white/70 backdrop-blur-lg rounded-xl" role="navigation">
-            <div className="flex justify-between items-center h-16 relative shadow-sm font-mono w-[95%] m-auto">
+<nav className="w-full shadow sticky top-0 z-30 bg-white/70 backdrop-blur-lg rounded-b-xl" role="navigation">
+<div className="flex justify-between items-center h-16 relative shadow-sm font-mono w-[95%] m-auto">
                 <NavLink to="/">
                     <Logo />
                 </NavLink>

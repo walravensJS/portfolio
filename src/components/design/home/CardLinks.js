@@ -19,7 +19,7 @@ export default function CardLinks() {
       id: "about",
       title: "About Me",
       image: "/img/mylogo.svg",
-      route: ROUTES.project.path, // Using same path as in your original code
+      route: ROUTES.about.path, // Using same path as in your original code
       buttonText: "About Me",
       description: "Learn more about my background and skills"
     }
@@ -51,11 +51,6 @@ export default function CardLinks() {
               <div className="absolute inset-x-0 bottom-0 p-6 text-white z-20 transform transition-all duration-300">
                 <h3 className="text-2xl font-bold mb-2">{card.title}</h3>
                 
-                <p className={`text-gray-200 mb-4 transition-all duration-300 ${
-                  hoveredCard === card.id ? "opacity-100 max-h-20" : "opacity-0 max-h-0"
-                }`}>
-                  {card.description}
-                </p>
                 
                 <div className="transform transition-all duration-300">
                   <ButtonLink href={card.route}>{card.buttonText}</ButtonLink>

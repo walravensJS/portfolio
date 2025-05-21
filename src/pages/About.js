@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { GET_SKILLS, GET_EDUCATION, GET_PROJECTS } from "./../graphql/queries";
 import InfoRow from "../components/design/About/InfoRow"
 import SocialButton from "../components/design/About/SocialButton"
+import AnimatedLogo from "../components/design/Loading/AnimatedLogo";
 
 export default function About() {
   const [isResumeOpen, setResumeOpen] = useState(false);
@@ -38,8 +39,13 @@ export default function About() {
 
   // Loading state
   if (skillsLoading || educationLoading || projectsLoading) {
-    return <LoadingState />;
-  }
+    return (
+      <div className="flex justify-center items-center h-screen w-screen">
+          <div className="w-40 h-40">
+              <AnimatedLogo className="w-full" />
+          </div>
+      </div>
+  );  }
 
   // Error state
   if (skillsError || educationError || projectsError) {
@@ -348,35 +354,71 @@ const EducationSection = ({ educations }) => (
 
 // Experience Section
 const ExperienceSection = () => (
-  <div>
+  <div className="container mx-auto px-4">
     <div className="max-w-3xl mx-auto mb-12 text-center">
-      <h2 className="text-3xl font-bold text-gray-800 mb-4">Professional Experience</h2>
-      <p className="text-gray-600 text-lg">
+      <h2 className="text-3xl font-extrabold text-gray-800 mb-4 sm:text-4xl">Professional Experience</h2>
+      <p className="text-gray-600 text-lg sm:text-xl">
         My professional journey and work experience
       </p>
     </div>
-    
+
     <div className="max-w-3xl mx-auto">
       <div className="relative">
-        <div className="absolute left-8 top-6 h-full w-1 bg-gradient-to-b from-purple-500 to-indigo-600 rounded"></div>
-        
+        {/* Vertical line for the timeline */}
+        <div className="absolute left-8 top-6 h-full w-1 bg-gradient-to-b from-purple-500 to-indigo-600 rounded-full"></div>
+
         <div className="space-y-8">
-          <div className="flex">
+          {/* Full-stack Developer Experience */}
+          <div className="flex items-start">
             <div className="relative shrink-0 w-16">
-              <div className="absolute top-6 left-6 w-6 h-6 bg-white rounded-full border-4 border-purple-500 z-10"></div>
+              {/* Timeline dot */}
+              <div className="absolute top-6 left-6 w-6 h-6 bg-white rounded-full border-4 border-purple-500 z-10 shadow-md"></div>
             </div>
-            <div className="bg-white rounded-xl shadow-md p-6 flex-1 ml-2 hover:shadow-lg transition-shadow">
-              <span className="inline-block bg-purple-100 text-purple-800 rounded-full px-3 py-1 text-sm font-medium mb-3">
-                April 2025 - June 2025
+            <div className="bg-white rounded-xl shadow-lg p-6 flex-1 ml-2 hover:shadow-xl transition-all duration-300 ease-in-out">
+              <span className="inline-block bg-purple-100 text-purple-800 rounded-full px-4 py-1 text-sm mb-3">
+                April 2025 - Present
               </span>
-              <h3 className="text-xl font-bold text-gray-800">Zoomers</h3>
-              <p className="text-purple-600 mb-3">Full-stack Developer</p>
-              <div className="text-gray-600 space-y-2">
-                <p>Helped implementing features onto their platform, bug fixing, in charge of leading a project</p>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  <span className="bg-gray-100 text-gray-700 rounded-full px-3 py-1 text-xs">React</span>
-                  <span className="bg-gray-100 text-gray-700 rounded-full px-3 py-1 text-xs">Node.js</span>
-                  <span className="bg-gray-100 text-gray-700 rounded-full px-3 py-1 text-xs">Project Management</span>
+              <h3 className="text-xl font-bold text-gray-800 mb-1">Zoomers</h3>
+              <p className="text-purple-600 mb-3 text-base">Full-stack Developer</p>
+              <div className="text-gray-700 space-y-2">
+                <ul className="list-disc list-inside pl-4">
+                  <li className="mb-2">Upgrading the platform with new features and debugging existing functionalities using PHP.</li>
+                  <li className="mb-2">Collaborating closely with web designers to ensure optimal UI/UX for new and existing features.</li>
+                  <li className="mb-2">Solely responsible for the portfolio feature update, providing Zoomers with full management controls over their portfolio.</li>
+                  <li className="mb-2">Successfully fixed and optimized the sales flow in the back office, improving operational efficiency.</li>
+                </ul>
+                <div className="flex flex-wrap gap-2 mt-4 pt-2 border-t border-gray-100">
+                  <span className="bg-gray-100 text-gray-700 rounded-full px-3 py-1 text-xs font-medium">PHP</span>
+                  <span className="bg-gray-100 text-gray-700 rounded-full px-3 py-1 text-xs font-medium">UI/UX Collaboration</span>
+                  <span className="bg-gray-100 text-gray-700 rounded-full px-3 py-1 text-xs font-medium">Project Ownership</span>
+                  <span className="bg-gray-100 text-gray-700 rounded-full px-3 py-1 text-xs font-medium">Process Optimization</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Freelance Graphic Designer Experience */}
+          <div className="flex items-start">
+            <div className="relative shrink-0 w-16">
+              {/* Timeline dot */}
+              <div className="absolute top-6 left-6 w-6 h-6 bg-white rounded-full border-4 border-purple-500 z-10 shadow-md"></div>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg p-6 flex-1 ml-2 hover:shadow-xl transition-all duration-300 ease-in-out">
+              <span className="inline-block bg-purple-100 text-purple-800 rounded-full px-4 py-1 text-sm mb-3">
+                2020 - Present
+              </span>
+              <h3 className="text-xl font-bold text-gray-800 mb-1">Freelance Graphic Designer</h3>
+              <p className="text-purple-600 mb-3 text-base">Self-employed</p>
+              <div className="text-gray-700 space-y-2">
+                <ul className="list-disc list-inside pl-4">
+                  <li className="mb-2">Designed various graphic materials including logos, brochures, and social media content for diverse clients.</li>
+                  <li className="mb-2">Managed multiple design projects from concept to completion, ensuring client satisfaction and meeting deadlines.</li>
+                  <li className="mb-2">Utilized Adobe Creative Suite (Photoshop, Illustrator, Premiere Pro, InDesign) to produce high-quality visual assets.</li>
+                </ul>
+                <div className="flex flex-wrap gap-2 mt-4 pt-2 border-t border-gray-100">
+                  <span className="bg-gray-100 text-gray-700 rounded-full px-3 py-1 text-xs font-medium">Graphic Design</span>
+                  <span className="bg-gray-100 text-gray-700 rounded-full px-3 py-1 text-xs font-medium">Client Management</span>
+                  <span className="bg-gray-100 text-gray-700 rounded-full px-3 py-1 text-xs font-medium">Adobe Creative Suite</span>
                 </div>
               </div>
             </div>

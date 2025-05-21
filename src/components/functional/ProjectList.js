@@ -118,63 +118,7 @@ export default function ProjectList() {
 
     return (
         <div className="container mx-auto w-[95%]">
-            <div className="flex justify-between items-center gap-4 mb-6">
-                {/* Search Input and Button */}
-                <div className="flex gap-2 z-10">
-                    <input
-                        type="text"
-                        placeholder="Search by title, description, or skills..."
-                        className="border border-gray-300 rounded-md px-4 py-2 w-full"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                    <button
-                        className="bg-purple-500 text-white px-4 py-2 rounded-md"
-                        onClick={handleSearch}
-                    >
-                        Search
-                    </button>
-                </div>
-                <div className="flex gap-2">
-                    <div className="relative w-48">
-                        <button
-                            type="button"
-                            className="w-full bg-white border border-gray-300 rounded-md px-4 py-2 text-left text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
-                            onClick={() => setDropdownOpen(!dropdownOpen)}
-                        >
-                            {selectedSkill || "All Skills"}
-                        </button>
-                        {dropdownOpen && (
-                            <ul className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto">
-                                <li
-                                    className="px-4 py-2 hover:bg-purple-100 cursor-pointer"
-                                    onClick={() => {
-                                        setSelectedSkill("");
-                                        handleFilter("");
-                                        setDropdownOpen(false);
-                                    }}
-                                >
-                                    All Skills
-                                </li>
-                                {skillsData?.skills.map((skill) => (
-                                    <li
-                                        key={skill.id}
-                                        className="px-4 py-2 hover:bg-purple-100 cursor-pointer"
-                                        onClick={() => {
-                                            setSelectedSkill(skill.title);
-                                            handleFilter(skill.title);
-                                            setDropdownOpen(false);
-                                        }}
-                                    >
-                                        {skill.title}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-                    </div>
-                </div>
-            </div>
-
+            
             <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {filteredProjects.map((project) => (
                     <div

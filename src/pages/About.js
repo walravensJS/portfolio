@@ -176,28 +176,48 @@ export default function About() {
         )}
       </main>
 
-      {/* Resume Modal */}
-      {isResumeOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto">
-            <div className="flex justify-between items-center p-4 border-b">
-              <h3 className="text-xl font-bold">Resume</h3>
-              <button 
-                onClick={() => setResumeOpen(false)}
-                className="p-1 rounded-full hover:bg-gray-100"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div className="p-6">
-              {/* Resume content would go here */}
-              <p>Resume content...</p>
-            </div>
+     {/* Resume Modal */}
+{isResumeOpen && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+    <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto">
+      <div className="flex justify-between items-center p-4 border-b">
+        <h3 className="text-xl font-bold">Resume</h3>
+        <button 
+          onClick={() => setResumeOpen(false)}
+          className="p-1 rounded-full hover:bg-gray-100"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div className="p-6">
+        <div className="flex flex-col items-center">
+          {/* Resume PNG Preview */}
+          <div className="mb-6 w-full max-h-[70vh] overflow-auto shadow-lg rounded-lg">
+            <img 
+              src="/img/Resume-Stijn_Walravens.png" 
+              alt="Stijn Walravens Resume" 
+              className="w-full h-auto"
+            />
           </div>
+          
+          {/* Download PDF Button */}
+          <a 
+            href="/img/Resume-Stijn_Walravens.pdf" 
+            download="Resume-Stijn_Walravens.pdf"
+            className="bg-purple-600 hover:bg-purple-700 text-white font-medium px-6 py-3 rounded-lg shadow transition-colors flex items-center gap-2"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+            Download PDF
+          </a>
         </div>
-      )}
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }

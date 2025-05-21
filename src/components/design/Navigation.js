@@ -52,6 +52,18 @@ export default function Navigation() {
                             About
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink
+                            to="/resume"
+                            className={({ isActive }) =>
+                                isActive
+                                ? "text-base font-bold bg-purple-500 px-4 py-2 rounded-full text-white transition-colors duration-300 ease-in-out"
+                                : "text-base font-bold hover:text-purple-500 transition-colors duration-300 ease-in-out"
+                            }
+                        >
+                            Resume
+                        </NavLink>
+                    </li>
                 </ul>
 
                 {/* Hamburger Icon for Mobile */}

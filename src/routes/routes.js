@@ -15,6 +15,10 @@ export const ROUTES = {
         path: "/contact",
         title: "Contact",
     },
+    resume: {
+        path: "/resume",
+        title: "Resume",
+    },
     detail: {
         path: "/projects/:slug",
         title: "Detail",

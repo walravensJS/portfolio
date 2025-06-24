@@ -20,7 +20,7 @@ export default function ResumePage() {
         // Create an anchor element and trigger download
         const link = document.createElement("a");
         link.href = resumeURL;
-        link.download = "Resume-Stijn_Walravens.pdf";
+        link.download = "stijnwalravens-resume.pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
